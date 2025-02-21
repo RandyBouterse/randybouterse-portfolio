@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { MessageSquare, Sun, Moon } from "lucide-react";
+import { MessageSquare, Sun, Moon, FileDown, Github, Mail, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useTheme } from "next-themes";
@@ -13,7 +12,7 @@ const Index = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[rgb(34,193,195)] to-[rgb(22,138,198)] dark:from-[rgb(2,0,36)] dark:to-[rgb(11,152,181)] dark:bg-gradient-to-br text-foreground relative transition-colors duration-300">
+    <div className="min-h-screen bg-gradient-to-br from-[rgb(34,193,195)] to-[rgb(22,138,198)] dark:bg-black text-foreground relative transition-colors duration-300">
       {/* Theme Toggle */}
       <Button
         variant="outline"
@@ -39,10 +38,17 @@ const Index = () => {
             Currently working on crafting delightful user experiences and building innovative design systems. 
             Let's create something amazing together.
           </p>
-          <div className="flex gap-4">
-            <Button variant="outline" size="lg">
-              View Projects
-            </Button>
+          <div className="flex flex-wrap items-center gap-4">
+            <a 
+              href="https://docs.google.com/document/d/1B6FI3S4PSuTt35XHqkqek-bi60oxyhq_l-t2x8H_o7Y/edit?usp=sharing" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline" size="lg">
+                <FileDown className="w-5 h-5 mr-2" />
+                Resume
+              </Button>
+            </a>
             <Dialog open={isChatOpen} onOpenChange={setIsChatOpen}>
               <DialogTrigger asChild>
                 <Button size="lg">
@@ -57,6 +63,30 @@ const Index = () => {
                 <ChatBot />
               </DialogContent>
             </Dialog>
+            <div className="flex gap-4 ml-auto">
+              <a 
+                href="https://github.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-gray-600 transition-colors"
+              >
+                <Github className="w-6 h-6" />
+              </a>
+              <a 
+                href="mailto:your.email@example.com" 
+                className="text-foreground hover:text-gray-600 transition-colors"
+              >
+                <Mail className="w-6 h-6" />
+              </a>
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-gray-600 transition-colors"
+              >
+                <Linkedin className="w-6 h-6" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
