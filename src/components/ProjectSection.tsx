@@ -17,7 +17,7 @@ const ProjectSection = ({
   reverse = false,
 }: ProjectSectionProps) => {
   return (
-    <section className={cn("py-32", backgroundColor)}>
+    <section className={cn("py-32 dark:bg-opacity-10", backgroundColor)}>
       <div className="container px-4">
         <div
           className={cn(
@@ -27,7 +27,7 @@ const ProjectSection = ({
         >
           <div className={cn("animate-fade-up", reverse && "md:order-2")}>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
-            <p className="text-lg text-gray-600">{description}</p>
+            <p className="text-lg text-gray-600 dark:text-gray-300">{description}</p>
           </div>
           <div className={cn("animate-fade-in", reverse && "md:order-1")}>
             <img

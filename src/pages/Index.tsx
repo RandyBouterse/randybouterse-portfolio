@@ -1,19 +1,38 @@
-
 import { useState } from "react";
-import { MessageSquare } from "lucide-react";
+import { MessageSquare, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { useTheme } from "next-themes";
 import ChatBot from "@/components/ChatBot";
 import ProjectSection from "@/components/ProjectSection";
 import SkillsSection from "@/components/SkillsSection";
 
 const Index = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   return (
-    <div className="min-h-screen bg-hero text-hero-foreground">
+    <div className="min-h-screen bg-background text-foreground relative">
+      <div className="absolute inset-0 grid grid-cols-[repeat(20,minmax(0,1fr))] grid-rows-[repeat(20,minmax(0,1fr))] gap-px opacity-[0.015] dark:opacity-[0.03] pointer-events-none">
+        {Array.from({ length: 400 }).map((_, i) => (
+          <div key={i} className="bg-foreground" />
+        ))}
+      </div>
+
+      {/* Theme Toggle */}
+      <Button
+        variant="outline"
+        size="icon"
+        className="fixed top-4 right-4 z-50"
+        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      >
+        <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+        <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+        <span className="sr-only">Toggle theme</span>
+      </Button>
+
       {/* Hero Section */}
-      <section className="container px-4 pt-20 pb-32 min-h-screen flex flex-col justify-center">
+      <section className="container px-4 pt-20 pb-32 min-h-screen flex flex-col justify-center relative">
         <div className="max-w-3xl animate-fade-up">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             A developer turned product designer{" "}
@@ -80,6 +99,25 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Floating AI Assistant Button */}
+      <Dialog open={isChatOpen} onOpenChange={setIsChatOpen}>
+        <DialogTrigger asChild>
+          <Button
+            size="lg"
+            className="fixed bottom-8 right-8 rounded-full shadow-lg"
+          >
+            <MessageSquare className="w-5 h-5" />
+            <span className="sr-only">Chat with AI Assistant</span>
+          </Button>
+        </DialogTrigger>
+        <DialogContent className="sm:max-w-[425px]">
+          <DialogHeader>
+            <DialogTitle>Chat with my AI Assistant</DialogTitle>
+          </DialogHeader>
+          <ChatBot />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
