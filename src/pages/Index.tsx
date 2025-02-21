@@ -1,19 +1,19 @@
-
 import { useState } from "react";
-import { MessageSquare, Sun, Moon, FileDown, Github, Mail, Linkedin } from "lucide-react";
+import { MessageSquare, Sun, Moon, FileDown, Mail, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useTheme } from "next-themes";
 import ChatBot from "@/components/ChatBot";
 import ProjectSection from "@/components/ProjectSection";
 import SkillsSection from "@/components/SkillsSection";
+import ExperienceSection from "@/components/ExperienceSection";
 
 const Index = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[rgb(34,193,195)] to-[rgb(22,138,198)] dark:bg-black text-foreground relative transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-black text-foreground relative transition-colors duration-300">
       {/* Theme Toggle */}
       <Button
         variant="outline"
@@ -66,12 +66,16 @@ const Index = () => {
             </Dialog>
             <div className="flex gap-4 ml-auto">
               <a 
-                href="https://github.com" 
+                href="https://notion.so" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-gray-600 transition-colors"
               >
-                <Github className="w-6 h-6" />
+                <img 
+                  src="/lovable-uploads/a6f660e5-1bef-4818-b960-a59f511d4b4f.png" 
+                  alt="Notion" 
+                  className="w-6 h-6"
+                />
               </a>
               <a 
                 href="mailto:your.email@example.com" 
@@ -91,6 +95,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Experience Section */}
+      <ExperienceSection />
 
       {/* Projects Section */}
       <ProjectSection
