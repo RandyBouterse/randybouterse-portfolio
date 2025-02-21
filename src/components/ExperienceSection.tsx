@@ -11,52 +11,71 @@ interface WorkExperience {
 
 const workExperiences: WorkExperience[] = [
   {
-    company: "DBS Bank",
-    role: "Graduate Associate (SEED Programme)",
-    period: "Jul 2023 - Present",
+    company: "Chamber of Commerce (Kamer van Koophandel)",
+    role: "Senior Business Analyst & Product Owner",
+    period: "2022 - Present",
     description: [
-      "Developed the Java backend for a bank account servicing process with multiple channel integrations using Activiti workflow",
-      "Built a custom database migration tool using Python and MariaDB and facilitated the migration of 1000+ processes from a vendor platform"
+      "Led the development of an omnichannel customer service platform, cutting costs by 23% and enhancing efficiency for 300 users",
+      "Spearheaded product discovery and requirements gathering, translating business needs into actionable user stories for engineering teams",
+      "Drove GDPR compliance initiatives, optimizing high-risk processes to improve security and operational effectiveness"
     ]
   },
   {
-    company: "Singapore Institute of Technology",
-    role: "Software Developer (Contract)",
-    period: "Apr 2023 - Jun 2023",
+    company: "Amsterdam University of the Arts",
+    role: "Product Manager – Student Information System",
+    period: "2021 - 2022",
     description: [
-      "Built NFTVue, a NFT gallery website that allows students to connect their crypto wallets to view and verify their school event-issued NFTs",
-      "Worked on DemoConstruct, a full-stack web application (React + Python) that uses Meshroom to reconstruct 3D models from captured images"
+      "Managed the roadmap for the Student Information System (SIS), improving the experience for 3,300+ students and staff while reducing administrative errors",
+      "Designed and delivered training programs across six faculties, enhancing system adoption and operational efficiency"
     ]
   },
   {
-    company: "DBS Bank",
-    role: "Software Developer (Intern)",
-    period: "May 2022 - Dec 2022",
+    company: "Amsterdam University of the Arts",
+    role: "IT Product Owner – Office 365",
+    period: "2020 - 2021",
     description: [
-      "Worked on the backend for the digital exchange and asset custody application using Spring Boot and Java",
-      "Built an admin dashboard web application for a DBS Metaverse event using Spring Security and Angular"
-    ]
-  },
-  {
-    company: "Activate Interactive Pte Ltd",
-    role: "Software Developer (Intern)",
-    period: "May 2019 - Aug 2019",
-    description: [
-      "Developed RP Connect, the iOS and Android mobile app for Republic Polytechnic using React Native"
+      "Launched a digital audition solution during COVID-19, ensuring a seamless admission process for 83 students",
+      "Optimized the Office 365 environment for 3,500+ users, enhancing collaboration and communication",
+      "Developed training programs to improve digital literacy and support the organization's digital transformation strategy"
     ]
   }
 ];
 
 const educationData = [
   {
-    institution: "Singapore Institute of Technology",
-    degree: "Bachelor of Engineering in Information and Communications Technology",
-    period: "2020 - 2024",
-    achievements: [
-      "CGPA: 4.76/5.00",
-      "Director's List (AY2021/2022 T1, T2, T3)",
-      "SIT Scholarship"
-    ]
+    institution: "University of Amsterdam",
+    degree: "MSc - Master of Business Administration (Digital Business)",
+    period: "2019 - 2020",
+    achievements: []
+  },
+  {
+    institution: "Rotterdam University of Applied Sciences",
+    degree: "BSc - Business IT & Management",
+    period: "2015 - 2019",
+    achievements: []
+  }
+];
+
+const certificationData = [
+  {
+    name: "Product School - Product Manager Certification (PMC)",
+    year: "2025",
+    status: "Coming Soon"
+  },
+  {
+    name: "Scaled Agile - Certified SAFe® 6 Product Owner / Product Manager",
+    year: "2024",
+    status: "Active"
+  },
+  {
+    name: "Scrum.org - Professional Scrum Product Owner I",
+    year: "2024",
+    status: "Active"
+  },
+  {
+    name: "Product School - AI for Product Certification",
+    year: "2025",
+    status: "Coming Soon"
   }
 ];
 
@@ -99,14 +118,28 @@ const ExperienceSection = () => {
                       <p className="text-gray-600 dark:text-gray-400">{edu.degree}</p>
                       <p className="text-sm text-gray-500">{edu.period}</p>
                     </div>
-                    <ul className="list-disc pl-6 space-y-2">
-                      {edu.achievements.map((achievement, i) => (
-                        <li key={i} className="text-gray-700 dark:text-gray-300">{achievement}</li>
-                      ))}
-                    </ul>
                   </CardContent>
                 </Card>
               ))}
+              
+              <h3 className="text-xl font-semibold mt-8 mb-4">Certifications</h3>
+              <div className="space-y-4">
+                {certificationData.map((cert, index) => (
+                  <Card key={index}>
+                    <CardContent className="p-4 flex justify-between items-center">
+                      <div>
+                        <p className="font-medium text-gray-700 dark:text-gray-300">{cert.name}</p>
+                        <p className="text-sm text-gray-500">{cert.year}</p>
+                      </div>
+                      {cert.status === "Coming Soon" && (
+                        <Badge variant="secondary" className="ml-4">
+                          Coming Soon
+                        </Badge>
+                      )}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </TabsContent>
         </Tabs>
