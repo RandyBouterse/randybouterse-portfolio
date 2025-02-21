@@ -47,13 +47,11 @@ const educationData = [
     institution: "University of Amsterdam",
     degree: "MSc - Master of Business Administration (Digital Business)",
     period: "2019 - 2020",
-    achievements: []
   },
   {
     institution: "Rotterdam University of Applied Sciences",
     degree: "BSc - Business IT & Management",
     period: "2015 - 2019",
-    achievements: []
   }
 ];
 
@@ -61,17 +59,14 @@ const certificationData = [
   {
     name: "Product School - Product Manager Certification (PMC)",
     year: "2025",
-    status: "Coming Soon"
   },
   {
     name: "Scaled Agile - Certified SAFe® 6 Product Owner / Product Manager",
     year: "2024",
-    status: "Active"
   },
   {
     name: "Scrum.org - Professional Scrum Product Owner I",
     year: "2024",
-    status: "Active"
   },
   {
     name: "Product School - AI for Product Certification",
