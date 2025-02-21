@@ -8,6 +8,7 @@ import ChatBot from "@/components/ChatBot";
 import ProjectSection from "@/components/ProjectSection";
 import SkillsSection from "@/components/SkillsSection";
 import ExperienceSection from "@/components/ExperienceSection";
+import { Badge } from "@/components/ui/badge";
 
 const Index = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -75,7 +76,7 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/ddbc40c4-3e42-4c88-b620-e419776f18e5.png" 
                   alt="Notion" 
-                  className="w-6 h-6"
+                  className="w-6 h-6 dark:invert"
                 />
               </a>
               <a 
@@ -92,6 +93,44 @@ const Index = () => {
               >
                 <Linkedin className="w-6 h-6" />
               </a>
+            </div>
+          </div>
+
+          {/* Certification Badges */}
+          <div className="mt-8 flex flex-wrap gap-4">
+            <div className="bg-white rounded-lg p-2 shadow-sm">
+              <img 
+                src="/lovable-uploads/69f58347-708b-45d2-886e-40922d514c0e.png"
+                alt="Product Manager Certification"
+                className="h-16 w-auto"
+              />
+            </div>
+            <div className="bg-white rounded-lg p-2 shadow-sm">
+              <img 
+                src="/lovable-uploads/67d4b806-28b9-4b64-8a51-908520602013.png"
+                alt="PSPO Certification"
+                className="h-16 w-auto"
+              />
+            </div>
+            <div className="bg-white rounded-lg p-2 shadow-sm">
+              <img 
+                src="/lovable-uploads/abe4214a-16c5-4321-8cf7-ffed7dfa3840.png"
+                alt="POPM Certification"
+                className="h-16 w-auto"
+              />
+            </div>
+            <div className="bg-white rounded-lg p-2 shadow-sm flex items-center">
+              <img 
+                src="/lovable-uploads/eaa326ef-94ff-4b8e-a8a3-f2e1f803f372.png"
+                alt="AI Product Certification"
+                className="h-16 w-auto opacity-50"
+              />
+              <Badge 
+                variant="secondary" 
+                className="absolute -top-2 -right-2"
+              >
+                Coming Soon
+              </Badge>
             </div>
           </div>
         </div>
