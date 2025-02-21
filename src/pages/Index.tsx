@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { MessageSquare, Sun, Moon, FileDown, Mail, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -30,9 +31,9 @@ const Index = () => {
       <section className="container px-4 pt-20 pb-32 min-h-screen flex flex-col justify-center relative">
         <div className="max-w-3xl animate-fade-up">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            A developer turned product designer{" "}
+            A Business analyst turned Product Manager{" "}
             <span className="block text-xl md:text-2xl mt-2 text-gray-400">
-              - focusing on interaction design, design systems & prototyping
+              bridging the gap between strategic vision and user-centric execution
             </span>
           </h1>
           <p className="text-lg md:text-xl text-gray-400 mb-8">
@@ -72,7 +73,7 @@ const Index = () => {
                 className="text-foreground hover:text-gray-600 transition-colors"
               >
                 <img 
-                  src="/lovable-uploads/a6f660e5-1bef-4818-b960-a59f511d4b4f.png" 
+                  src="/lovable-uploads/ddbc40c4-3e42-4c88-b620-e419776f18e5.png" 
                   alt="Notion" 
                   className="w-6 h-6"
                 />
