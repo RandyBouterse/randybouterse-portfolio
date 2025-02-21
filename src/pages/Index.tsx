@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { MessageSquare, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,9 +14,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground relative">
-      <div className="absolute inset-0 grid grid-cols-[repeat(20,minmax(0,1fr))] grid-rows-[repeat(20,minmax(0,1fr))] gap-px opacity-[0.015] dark:opacity-[0.03] pointer-events-none">
+      <div className="absolute inset-0 grid grid-cols-[repeat(20,minmax(0,1fr))] grid-rows-[repeat(20,minmax(0,1fr))] gap-px opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
         {Array.from({ length: 400 }).map((_, i) => (
-          <div key={i} className="bg-foreground" />
+          <div key={i} className="bg-foreground aspect-square" />
         ))}
       </div>
 
