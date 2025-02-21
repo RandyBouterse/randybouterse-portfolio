@@ -13,13 +13,7 @@ const Index = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="min-h-screen bg-background text-foreground relative">
-      <div className="absolute inset-0 grid grid-cols-[repeat(20,minmax(0,1fr))] grid-rows-[repeat(20,minmax(0,1fr))] gap-px opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
-        {Array.from({ length: 400 }).map((_, i) => (
-          <div key={i} className="bg-foreground aspect-square" />
-        ))}
-      </div>
-
+    <div className="min-h-screen bg-gradient-to-br from-[rgb(34,193,195)] to-[rgb(22,138,198)] dark:from-[rgb(2,0,36)] dark:to-[rgb(11,152,181)] dark:bg-gradient-to-br text-foreground relative transition-colors duration-300">
       {/* Theme Toggle */}
       <Button
         variant="outline"
