@@ -118,8 +118,7 @@ const Index = () => {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-gray-400 mb-8">
-            Currently working on crafting delightful user experiences and building innovative design systems. 
-            Let's create something amazing together.
+            The future is AI-driven, and I’m embracing it head-on. I’m actively exploring integrating AI into general use and product development—pushing boundaries, solving problems, and making tech work smarter.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <TooltipProvider>
