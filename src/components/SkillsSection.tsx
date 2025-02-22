@@ -1,34 +1,113 @@
 
 import { Card, CardContent } from "@/components/ui/card";
+import { 
+  RoadmapIcon, 
+  Users, 
+  Activity, 
+  List, 
+  ChartBar, 
+  Target, 
+  Settings,
+  FileText,
+  Smartphone,
+  Robot,
+  Map
+} from "lucide-react";
 
-const skills = [
+interface Skill {
+  title: string;
+  items: string[];
+  icon: React.ReactNode;
+}
+
+const skillsData: Skill[] = [
   {
-    title: "UX Design",
-    description: "Creating intuitive and user-centered design solutions",
+    title: "Core Skills",
+    items: [
+      "Product roadmapping",
+      "User research",
+      "Agile/scrum methodologies",
+      "Stakeholder management",
+      "Requirements gathering",
+      "Data analysis",
+      "OKR/KPI tracking",
+      "Feature prioritization",
+      "User-centric design",
+      "Process optimization"
+    ],
+    icon: <Target className="w-6 h-6" />
   },
   {
-    title: "Design Systems",
-    description: "Building scalable and consistent design languages",
+    title: "Project Management",
+    items: [
+      "Jira - Sprint planning",
+      "Confluence - Technical documentation",
+      "Backlog management"
+    ],
+    icon: <Activity className="w-6 h-6" />
+  },
+  {
+    title: "Collaboration & Design",
+    items: [
+      "Figma - Product design",
+      "Miro - Cross-functional collaboration",
+      "Design thinking facilitation"
+    ],
+    icon: <Users className="w-6 h-6" />
   },
   {
     title: "Prototyping",
-    description: "Crafting interactive and high-fidelity prototypes",
+    items: [
+      "Flutterflow - Mobile app prototyping",
+      "Bubble.io - Web app MVPs",
+      "Low/No-code development"
+    ],
+    icon: <Smartphone className="w-6 h-6" />
   },
+  {
+    title: "Data & Analytics",
+    items: [
+      "Google Analytics - User behavior tracking",
+      "Power BI - KPI visualization",
+      "Metrics analysis"
+    ],
+    icon: <ChartBar className="w-6 h-6" />
+  },
+  {
+    title: "AI Tools",
+    items: [
+      "ChatGPT - Content generation",
+      "Claude - Data analysis",
+      "NotebookLLM - Code assistance",
+      "Lovable.dev - Development support"
+    ],
+    icon: <Robot className="w-6 h-6" />
+  }
 ];
 
 const SkillsSection = () => {
   return (
-    <section className="bg-section-green py-32">
+    <section className="py-32 bg-white dark:bg-black">
       <div className="container px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          Things I'm good at
+          Skills & Toolkit
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {skills.map((skill) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {skillsData.map((skill) => (
             <Card key={skill.title} className="animate-fade-up">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{skill.title}</h3>
-                <p className="text-gray-600">{skill.description}</p>
+                <div className="flex items-center gap-3 mb-4">
+                  {skill.icon}
+                  <h3 className="text-xl font-semibold">{skill.title}</h3>
+                </div>
+                <ul className="space-y-2">
+                  {skill.items.map((item, index) => (
+                    <li key={index} className="text-gray-600 dark:text-gray-400 flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </CardContent>
             </Card>
           ))}

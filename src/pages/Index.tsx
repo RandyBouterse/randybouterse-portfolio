@@ -1,10 +1,10 @@
+
 import { useState } from "react";
 import { MessageSquare, Sun, Moon, FileDown, Mail, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useTheme } from "next-themes";
 import ChatBot from "@/components/ChatBot";
-import ProjectSection from "@/components/ProjectSection";
 import SkillsSection from "@/components/SkillsSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import { Badge } from "@/components/ui/badge";
@@ -138,27 +138,11 @@ const Index = () => {
       {/* Experience Section */}
       <ExperienceSection />
 
-      {/* Projects Section */}
-      <ProjectSection
-        backgroundColor="bg-section-pink"
-        title="Mobile App Redesign"
-        description="A complete overhaul of a legacy application, focusing on modern design patterns and improved user experience."
-        imageSrc="/lovable-uploads/fc09ccc6-5d97-43c2-b3de-5062784d1b56.png"
-      />
-
-      <ProjectSection
-        backgroundColor="bg-section-blue"
-        title="Design System Development"
-        description="Created and maintained a comprehensive design system used across multiple products."
-        imageSrc="/lovable-uploads/fc09ccc6-5d97-43c2-b3de-5062784d1b56.png"
-        reverse
-      />
-
       {/* Skills Section */}
       <SkillsSection />
 
       {/* Contact Section */}
-      <section className="bg-hero text-hero-foreground py-32">
+      <section className="bg-white dark:bg-black text-foreground py-32">
         <div className="container px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Let's work together</h2>
           <p className="text-lg text-center text-gray-400 mb-8">
