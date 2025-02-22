@@ -320,7 +320,7 @@ const Index = () => {
                 <h3 className="text-xl font-bold mb-2">Forrest Gump</h3>
                 <h4 className="text-lg text-gray-600 dark:text-gray-400 mb-4">Accidental Marathon Runner</h4>
                 <p className="text-gray-700 dark:text-gray-300">
-                  "Hey, want to do a 5K?" my colleague asked. Somehow that turned into "I'm running a full marathon in 2025!" Classic me - always taking things too far. Now I'm collecting running shoes, talking about "splits" at parties, and wondering what I've gotten myself into. But hey, if Forrest can run across America, I can handle 42.195 kilometers... right?
+                  "Hey, want to join a Mud Masters obstacle run?" my colleague asked. Somehow that turned into "I'm running a full marathon in 2025!" Classic me - always taking things too far. Now I'm chasing PR's, talking about "splits" at parties, and wondering what I've gotten myself into. But hey, if Forrest can run across America, I can handle 42.195 kilometers... right?
                 </p>
               </CardContent>
             </Card>
