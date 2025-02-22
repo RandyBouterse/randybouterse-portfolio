@@ -35,9 +35,9 @@ const skillsData: Skill[] = [
   {
     title: "Project Management",
     items: [
-      "Jira - Sprint planning",
+      "Jira - Backlog management, sprint planning",
       "Confluence - Technical documentation",
-      "Backlog management"
+      "Notion - Technical documentation",
     ],
     icon: <Activity className="w-6 h-6" />
   },
@@ -72,8 +72,8 @@ const skillsData: Skill[] = [
     title: "AI Tools",
     items: [
       "ChatGPT - Content generation",
-      "Claude - Data analysis",
-      "NotebookLLM - Code assistance",
+      "Claude - Content generation, Data analysis",
+      "NotebookLLM - Multiple source analysis",
       "Lovable.dev - Development support"
     ],
     icon: <Bot className="w-6 h-6" />
