@@ -11,51 +11,65 @@ interface WorkExperience {
 
 const workExperiences: WorkExperience[] = [
   {
-    company: "DBS Bank",
-    role: "Graduate Associate (SEED Programme)",
-    period: "Jul 2023 - Present",
+    company: "Chamber of Commerce (Kamer van Koophandel)",
+    role: "Business Analyst / Product Owner",
+    period: "2022 - Present",
     description: [
-      "Developed the Java backend for a bank account servicing process with multiple channel integrations using Activiti workflow",
-      "Built a custom database migration tool using Python and MariaDB and facilitated the migration of 1000+ processes from a vendor platform"
+      "Led the development of an omnichannel customer service platform, cutting costs by 23% and enhancing efficiency for 300 users. Spearheaded product discovery and requirements gathering, translating business needs into actionable user stories for engineering teams. Drove GDPR compliance initiatives, optimizing high-risk processes to improve security and operational effectiveness."
     ]
   },
   {
-    company: "Singapore Institute of Technology",
-    role: "Software Developer (Contract)",
-    period: "Apr 2023 - Jun 2023",
+    company: "Amsterdam University of The Arts",
+    role: "Associate / Junior Product Manager",
+    period: "2021 - 2022",
     description: [
-      "Built NFTVue, a NFT gallery website that allows students to connect their crypto wallets to view and verify their school event-issued NFTs",
-      "Worked on DemoConstruct, a full-stack web application (React + Python) that uses Meshroom to reconstruct 3D models from captured images"
+      "Managed the roadmap for the Student Information System (SIS), improving the experience for 3,300+ students and staff while reducing administrative errors. Designed and delivered training programs across six faculties, enhancing system adoption and operational efficiency."
     ]
   },
   {
-    company: "DBS Bank",
-    role: "Software Developer (Intern)",
-    period: "May 2022 - Dec 2022",
+    company: "Amsterdam University of The Arts",
+    role: "IT Product Owner",
+    period: "2020 - 2021",
     description: [
-      "Worked on the backend for the digital exchange and asset custody application using Spring Boot and Java",
-      "Built an admin dashboard web application for a DBS Metaverse event using Spring Security and Angular"
+      "Launched a digital audition solution during COVID-19, ensuring a seamless admission process for 83 students. Optimized the Office 365 environment for 3,500+ users, enhancing collaboration and communication. Developed training programs to improve digital literacy and support the organization’s digital transformation strategy."
     ]
   },
-  {
-    company: "Activate Interactive Pte Ltd",
-    role: "Software Developer (Intern)",
-    period: "May 2019 - Aug 2019",
-    description: [
-      "Developed RP Connect, the iOS and Android mobile app for Republic Polytechnic using React Native"
-    ]
-  }
 ];
 
 const educationData = [
   {
-    institution: "Singapore Institute of Technology",
-    degree: "Bachelor of Engineering in Information and Communications Technology",
-    period: "2020 - 2024",
+    institution: "Product School",
+    degree: "Product Manager Certification (PMC)",
+    period: "2025",
     achievements: [
-      "CGPA: 4.76/5.00",
-      "Director's List (AY2021/2022 T1, T2, T3)",
-      "SIT Scholarship"
+    ]
+  }
+  {
+    institution: "Scaled Agile",
+    degree: "Certified SAFe® 6 Product Owner / Product Manager",
+    period: "2024",
+    achievements: [
+    ]
+  }
+  {
+    institution: "Scrum.org",
+    degree: "Certified SAFe® 6 Product Owner / Product Manager",
+    period: "2024",
+    achievements: [
+    ]
+  }
+  {
+    institution: "University of Amsterdam",
+    degree: "Professional Scrum Product Owner I",
+    period: "2024",
+    achievements: [
+    ]
+  }
+  {
+    institution: "Rotterdam University of Applied Sciences",
+    degree: "BSc - Business IT & Management",
+    period: "2015 - 2019",
+    achievements: [
     ]
   }
 ];
