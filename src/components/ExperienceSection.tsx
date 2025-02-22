@@ -1,6 +1,6 @@
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 interface WorkExperience {
   company: string;
@@ -31,9 +31,9 @@ const workExperiences: WorkExperience[] = [
     role: "IT Product Owner",
     period: "2020 - 2021",
     description: [
-      "Launched a digital audition solution during COVID-19, ensuring a seamless admission process for 83 students. Optimized the Office 365 environment for 3,500+ users, enhancing collaboration and communication. Developed training programs to improve digital literacy and support the organization’s digital transformation strategy."
+      "Launched a digital audition solution during COVID-19, ensuring a seamless admission process for 83 students. Optimized the Office 365 environment for 3,500+ users, enhancing collaboration and communication. Developed training programs to improve digital literacy and support the organization's digital transformation strategy."
     ]
-  },
+  }
 ];
 
 const educationData = [
@@ -41,36 +41,31 @@ const educationData = [
     institution: "Product School",
     degree: "Product Manager Certification (PMC)",
     period: "2025",
-    achievements: [
-    ]
-  }
+    achievements: []
+  },
   {
     institution: "Scaled Agile",
     degree: "Certified SAFe® 6 Product Owner / Product Manager",
     period: "2024",
-    achievements: [
-    ]
-  }
+    achievements: []
+  },
   {
     institution: "Scrum.org",
-    degree: "Certified SAFe® 6 Product Owner / Product Manager",
-    period: "2024",
-    achievements: [
-    ]
-  }
-  {
-    institution: "University of Amsterdam",
     degree: "Professional Scrum Product Owner I",
     period: "2024",
-    achievements: [
-    ]
-  }
+    achievements: []
+  },
+  {
+    institution: "University of Amsterdam",
+    degree: "MSc - Business Information Systems",
+    period: "2024",
+    achievements: []
+  },
   {
     institution: "Rotterdam University of Applied Sciences",
     degree: "BSc - Business IT & Management",
     period: "2015 - 2019",
-    achievements: [
-    ]
+    achievements: []
   }
 ];
 
