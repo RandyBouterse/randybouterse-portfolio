@@ -1,17 +1,12 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { 
-  RoadmapIcon, 
   Users, 
   Activity, 
-  List, 
   ChartBar, 
   Target, 
-  Settings,
-  FileText,
   Smartphone,
-  Robot,
-  Map
+  Bot
 } from "lucide-react";
 
 interface Skill {
@@ -81,7 +76,7 @@ const skillsData: Skill[] = [
       "NotebookLLM - Code assistance",
       "Lovable.dev - Development support"
     ],
-    icon: <Robot className="w-6 h-6" />
+    icon: <Bot className="w-6 h-6" />
   }
 ];
 
