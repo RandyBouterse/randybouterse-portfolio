@@ -62,7 +62,7 @@ const educationData: Education[] = [
     degree: "Certified SAFe® 6 Product Owner / Product Manager",
     period: "2024",
     achievements: [],
-    logo: "/lovable-uploads/a5d0a6e2-d70e-40e7-9d03-be8082af708a.png"
+    logo: "/lovable-uploads/cb3c276a-980f-4de3-92cd-038f6d250e32.png"
   },
   {
     institution: "Scrum.org",
@@ -83,7 +83,7 @@ const educationData: Education[] = [
     degree: "BSc - Business IT & Management",
     period: "2015 - 2019",
     achievements: [],
-    logo: "/lovable-uploads/cb3c276a-980f-4de3-92cd-038f6d250e32.png"
+    logo: "/lovable-uploads/a5d0a6e2-d70e-40e7-9d03-be8082af708a.png"
   }
 ];
 
@@ -103,11 +103,11 @@ const ExperienceSection = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0">
-                        <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <div className="w-16 h-16 rounded-full overflow-hidden bg-white">
                           <img 
                             src={exp.logo} 
                             alt={exp.company}
-                            className="w-full h-full object-contain p-2"
+                            className="w-full h-full object-cover p-0"
                           />
                         </div>
                       </div>
@@ -134,11 +134,11 @@ const ExperienceSection = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0">
-                        <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <div className="w-16 h-16 rounded-full overflow-hidden bg-white">
                           <img 
                             src={edu.logo} 
                             alt={edu.institution}
-                            className="w-full h-full object-contain p-2"
+                            className="w-full h-full object-cover p-0"
                           />
                         </div>
                       </div>
