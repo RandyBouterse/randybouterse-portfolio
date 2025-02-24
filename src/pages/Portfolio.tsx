@@ -4,12 +4,35 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Circle, Link, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useNavigate } from "react-router-dom";
 
 const Portfolio = () => {
   const { theme, setTheme } = useTheme();
+  const navigate = useNavigate();
 
   const projects = [
     {
+      id: "portfolio-website",
+      title: "Portfolio Website",
+      description: "A modern, responsive portfolio website built with React and Tailwind CSS",
+      tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+      images: [
+        "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+      ]
+    },
+    {
+      id: "aime-bot",
+      title: "Aime - Virtual Portfolio Bot",
+      description: "An AI-powered chatbot that helps users explore my portfolio and experience",
+      tech: ["OpenAI", "React", "Node.js", "TypeScript"],
+      images: [
+        "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+      ]
+    },
+    {
+      id: "customer-service-platform",
       title: "Customer Service Platform",
       description: "Developed an omnichannel platform improving efficiency by 23%",
       tech: ["React", "TypeScript", "Tailwind CSS"],
@@ -119,9 +142,14 @@ const Portfolio = () => {
                       <Badge key={i} variant="secondary">{tech}</Badge>
                     ))}
                   </div>
-                  <Button variant="ghost" size="sm" className="gap-2">
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className="gap-2"
+                    onClick={() => navigate(`/portfolio/${project.id}`)}
+                  >
                     <Link className="w-4 h-4" />
-                    View more
+                    View Details
                   </Button>
                 </CardContent>
               </Card>
