@@ -17,8 +17,8 @@ const Portfolio = () => {
       description: "A modern, responsive portfolio website built with React and Tailwind CSS",
       tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
       images: [
-        "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+        "https://i.postimg.cc/d050bmpt/undraw-trendy-interface-bm65.png",
+        "https://i.postimg.cc/d050bmpt/undraw-trendy-interface-bm65.png"
       ]
     },
     {
@@ -27,7 +27,7 @@ const Portfolio = () => {
       description: "An AI-powered chatbot that helps users explore my portfolio and experience",
       tech: ["OpenAI", "React", "Node.js", "TypeScript"],
       images: [
-        "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+        "https://i.postimg.cc/cCn48qHr/undraw-visionary-technology-6ouq.png",
         "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
       ]
     },
@@ -37,7 +37,7 @@ const Portfolio = () => {
       description: "Developed an omnichannel platform improving efficiency by 23%",
       tech: ["React", "TypeScript", "Tailwind CSS"],
       images: [
-        "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+        "https://i.postimg.cc/rFYNk307/undraw-calling-ieh0.png",
         "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
       ]
     },
@@ -46,7 +46,7 @@ const Portfolio = () => {
       description: "Revamped the SIS system for 3,300+ users",
       tech: ["Next.js", "Node.js", "MongoDB"],
       images: [
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+        "https://i.postimg.cc/76b3CN2f/undraw-online-collaboration-xon8.png",
         "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
       ]
     },
@@ -55,7 +55,7 @@ const Portfolio = () => {
       description: "Built a remote audition platform during COVID-19",
       tech: ["Vue.js", "Express", "PostgreSQL"],
       images: [
-        "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+        "https://i.postimg.cc/m29SNV69/undraw-innovative-9l1b.png",
         "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
       ]
     },
@@ -64,7 +64,7 @@ const Portfolio = () => {
       description: "Led the implementation of O365 for 3,500+ users",
       tech: ["SharePoint", "Azure AD", "Power Automate"],
       images: [
-        "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+        "https://i.postimg.cc/NML0B2v8/undraw-group-hangout-o22u.png",
         "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
       ]
     },
