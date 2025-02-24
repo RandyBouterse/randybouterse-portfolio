@@ -1,4 +1,3 @@
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -36,7 +35,7 @@ const workExperiences: WorkExperience[] = [
     description: [
       "Managed the roadmap for the Student Information System (SIS), improving the experience for 3,300+ students and staff while reducing administrative errors. Designed and delivered training programs across six faculties, enhancing system adoption and operational efficiency."
     ],
-    logo: "/lovable-uploads/38176ffc-f658-4c93-9401-e9be48daaadf.png"
+    logo: "/lovable-uploads/295abdd5-e1e1-40e5-a02a-63ef79951337.png"
   },
   {
     company: "Amsterdam University of The Arts",
@@ -45,7 +44,7 @@ const workExperiences: WorkExperience[] = [
     description: [
       "Launched a digital audition solution during COVID-19, ensuring a seamless admission process for 83 students. Optimized the Office 365 environment for 3,500+ users, enhancing collaboration and communication. Developed training programs to improve digital literacy and support the organization's digital transformation strategy."
     ],
-    logo: "/lovable-uploads/38176ffc-f658-4c93-9401-e9be48daaadf.png"
+    logo: "/lovable-uploads/295abdd5-e1e1-40e5-a02a-63ef79951337.png"
   }
 ];
 
