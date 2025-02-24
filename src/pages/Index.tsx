@@ -166,27 +166,7 @@ const Index = () => {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <a 
-                      href="https://notion.so" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-foreground hover:text-gray-600 transition-colors"
-                    >
-                      <img 
-                        src="/lovable-uploads/ddbc40c4-3e42-4c88-b620-e419776f18e5.png" 
-                        alt="Notion" 
-                        className="w-6 h-6 dark:invert"
-                      />
-                    </a>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>View some of my thoughts and inspiration</p>
-                  </TooltipContent>
-                </Tooltip>
-
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <a 
-                      href="mailto:your.email@example.com" 
+                      href="mailto:rr.bouterse@gmail.com" 
                       className="text-foreground hover:text-gray-600 transition-colors"
                     >
                       <Mail className="w-6 h-6" />
@@ -200,7 +180,7 @@ const Index = () => {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <a 
-                      href="https://linkedin.com" 
+                      href="https://www.linkedin.com/in/randybouterse/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-foreground hover:text-gray-600 transition-colors"
@@ -343,9 +323,11 @@ const Index = () => {
             Feel free to reach out for collaborations or just a friendly hello
           </p>
           <div className="flex justify-center">
-            <Button size="lg" variant="outline">
-              Contact Me
-            </Button>
+            <a href="mailto:rr.bouterse@gmail.com">
+              <Button size="lg" variant="outline">
+                Contact Me
+              </Button>
+            </a>
           </div>
         </div>
       </section>
