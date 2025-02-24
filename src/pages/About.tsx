@@ -120,7 +120,7 @@ const About = () => {
               
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/826beb05-6a76-433d-a5cf-9b21b121ec31.png"
+                  src="https://i.ibb.co/TDpjfLmq/Randy-Product-Manager.jpg"
                   alt="Product Development Process"
                   className="w-full"
                 />
