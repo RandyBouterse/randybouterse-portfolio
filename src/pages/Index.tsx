@@ -3,7 +3,7 @@ import { MessageSquare, Sun, Moon, FileDown, Mail, Linkedin, MapPin, Circle, Lin
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useTheme } from "next-themes";
-import ChatBot from "@/components/ChatBot";
+import VoiceflowChat from "@/components/VoiceflowChat";
 import SkillsSection from "@/components/SkillsSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import { Badge } from "@/components/ui/badge";
@@ -18,6 +18,13 @@ import { Card, CardContent } from "@/components/ui/card";
 const Index = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  const handleChatOpen = () => {
+    if (window.voiceflow?.chat) {
+      window.voiceflow.chat.open();
+    }
+    setIsChatOpen(false);
+  };
 
   const projects = [
     {
@@ -78,6 +85,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-foreground relative transition-colors duration-300">
+      <VoiceflowChat />
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -143,20 +151,10 @@ const Index = () => {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Dialog open={isChatOpen} onOpenChange={setIsChatOpen}>
-                    <DialogTrigger asChild>
-                      <Button size="lg">
-                        <MessageSquare className="w-5 h-5 mr-2" />
-                        Chat with AI Assistant
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent className="sm:max-w-[425px]">
-                      <DialogHeader>
-                        <DialogTitle>Chat with my AI Assistant</DialogTitle>
-                      </DialogHeader>
-                      <ChatBot />
-                    </DialogContent>
-                  </Dialog>
+                  <Button size="lg" onClick={handleChatOpen}>
+                    <MessageSquare className="w-5 h-5 mr-2" />
+                    Chat with AI Assistant
+                  </Button>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>Chat with my digital twin!</p>
@@ -333,23 +331,14 @@ const Index = () => {
         </div>
       </section>
 
-      <Dialog open={isChatOpen} onOpenChange={setIsChatOpen}>
-        <DialogTrigger asChild>
-          <Button
-            size="lg"
-            className="fixed bottom-8 right-8 rounded-full shadow-lg"
-          >
-            <MessageSquare className="w-5 h-5" />
-            <span className="sr-only">Chat with AI Assistant</span>
-          </Button>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Chat with my AI Assistant</DialogTitle>
-          </DialogHeader>
-          <ChatBot />
-        </DialogContent>
-      </Dialog>
+      <Button
+        size="lg"
+        className="fixed bottom-8 right-8 rounded-full shadow-lg"
+        onClick={handleChatOpen}
+      >
+        <MessageSquare className="w-5 h-5" />
+        <span className="sr-only">Chat with AI Assistant</span>
+      </Button>
     </div>
   );
 };
