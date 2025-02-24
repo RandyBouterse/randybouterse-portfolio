@@ -15,75 +15,57 @@ const Portfolio = () => {
       id: "portfolio-website",
       title: "Portfolio Website",
       description: "A modern, responsive portfolio website built with React and Tailwind CSS",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+      tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI", "Lovable"],
       images: [
         "https://i.postimg.cc/d050bmpt/undraw-trendy-interface-bm65.png",
-        "https://i.postimg.cc/d050bmpt/undraw-trendy-interface-bm65.png"
+        "https://i.postimg.cc/65Rm5Cn9/image.png"
       ]
     },
     {
       id: "aime-bot",
       title: "Aime - Virtual Portfolio Bot",
       description: "An AI-powered chatbot that helps users explore my portfolio and experience",
-      tech: ["OpenAI", "React", "Node.js", "TypeScript"],
+      tech: ["OpenAI ChatGPT", "Anthropic Claude", "Google Gemini", "Voiceflow"],
       images: [
         "https://i.postimg.cc/cCn48qHr/undraw-visionary-technology-6ouq.png",
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+        "https://i.postimg.cc/NMYnWF5g/image.png"
       ]
     },
     {
       id: "customer-service-platform",
       title: "Customer Service Platform",
-      description: "Developed an omnichannel platform improving efficiency by 23%",
-      tech: ["React", "TypeScript", "Tailwind CSS"],
+      description: "Implemented an omnichannel platform reducing costs and improving efficiancy",
+      tech: ["Sprinklr", "MS Teams", "Sharepoint"],
       images: [
         "https://i.postimg.cc/rFYNk307/undraw-calling-ieh0.png",
-        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+        "https://prod2-sprcdn-assets.sprinklr.com/50400/67e03d55-c284-4302-8235-14a3766c0ac0-137156522/Screenshot_2023-04-13_at_3.29..png"
       ]
     },
     {
       title: "Student Information System",
-      description: "Revamped the SIS system for 3,300+ users",
-      tech: ["Next.js", "Node.js", "MongoDB"],
+      description: "Implemented a new SIS system and led adoption for 3300+ users",
+      tech: ["Educator", "CSS", "HTML", "Kaltura", "MS Teams"],
       images: [
         "https://i.postimg.cc/76b3CN2f/undraw-online-collaboration-xon8.png",
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+        "https://www.educator.eu/wp-content/uploads/Educator_imac_macbook_ipad-1024x683.png"
       ]
     },
     {
-      title: "Digital Audition Platform",
-      description: "Built a remote audition platform during COVID-19",
-      tech: ["Vue.js", "Express", "PostgreSQL"],
+      title: "Digital Audition Solution",
+      description: "Built a remote audition solution during COVID-19",
+      tech: ["SharePoint", "Typeform", "Power Automate"],
       images: [
         "https://i.postimg.cc/m29SNV69/undraw-innovative-9l1b.png",
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+        "https://cdn.prod.website-files.com/60d07e744f068218f38db4c0/64a6bb36c7c50d4bdb67b172_62dea8562baf3e36c83125d2_Power%2520Automate.jpeg"
       ]
     },
     {
-      title: "Office 365 Integration",
-      description: "Led the implementation of O365 for 3,500+ users",
-      tech: ["SharePoint", "Azure AD", "Power Automate"],
+      title: "Office 365 implementation",
+      description: "Led the implementation of O365 across all faculties for 3,500+ users",
+      tech: ["O365", "Kaltura", "MS Teams"],
       images: [
         "https://i.postimg.cc/NML0B2v8/undraw-group-hangout-o22u.png",
-        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-      ]
-    },
-    {
-      title: "GDPR Compliance Tool",
-      description: "Developed tools for managing GDPR requirements",
-      tech: ["Python", "Django", "PostgreSQL"],
-      images: [
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
-      ]
-    },
-    {
-      title: "Analytics Dashboard",
-      description: "Created a real-time analytics platform",
-      tech: ["React", "D3.js", "Firebase"],
-      images: [
-        "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+        "https://teknertia.com/wp-content/uploads/2023/05/What-is-Microsoft-365-scaled.jpg"
       ]
     }
   ];
