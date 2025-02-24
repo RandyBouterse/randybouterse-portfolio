@@ -1,11 +1,24 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Circle, Sun, Moon } from "lucide-react";
+import { Circle, Sun, Moon, ChevronRight } from "lucide-react";
 import { useTheme } from "next-themes";
 
 const About = () => {
   const { theme, setTheme } = useTheme();
+
+  const sections = [
+    { id: "about", label: "About Me" },
+    { id: "approach", label: "My Approach" },
+    { id: "skills", label: "Key Skills" },
+    { id: "awesome", label: "A Bit of Awesomeness" }
+  ];
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const keySkills = [
     {
@@ -79,9 +92,27 @@ const About = () => {
         </div>
       </nav>
 
-      <div className="container px-4 pt-32">
+      <div className="fixed top-16 left-0 right-0 z-40 bg-white/80 dark:bg-black/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+        <div className="container px-4">
+          <div className="flex items-center gap-2 h-12 text-sm">
+            {sections.map((section, index) => (
+              <div key={section.id} className="flex items-center">
+                {index > 0 && <ChevronRight className="w-4 h-4 mx-2 text-gray-400" />}
+                <button
+                  onClick={() => scrollToSection(section.id)}
+                  className="hover:text-primary transition-colors"
+                >
+                  {section.label}
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container px-4 pt-40">
         <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-8 mb-12">
+          <div className="flex flex-col-reverse md:flex-row gap-8 mb-12" id="about">
             <div className="flex-1">
               <h1 className="text-4xl font-bold mb-8">About Me</h1>
               <div className="prose dark:prose-invert max-w-none space-y-6">
@@ -102,7 +133,7 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="md:w-1/3">
+            <div className="md:w-1/3 flex items-center">
               <img 
                 src="/lovable-uploads/8b91de20-875f-4b2f-a117-21e89ec16a56.png"
                 alt="Randy Bouterse"
@@ -111,7 +142,7 @@ const About = () => {
             </div>
           </div>
 
-          <Card className="mb-12">
+          <Card className="mb-12" id="approach">
             <CardContent className="p-6">
               <h2 className="text-2xl font-bold mb-4">My Approach</h2>
               <p className="text-gray-600 dark:text-gray-400 mb-8">
@@ -120,7 +151,7 @@ const About = () => {
               
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/8e0a24d1-98b0-453b-b295-c8eff6a91011.png"
+                  src="/lovable-uploads/826beb05-6a76-433d-a5cf-9b21b121ec31.png"
                   alt="Product Development Process"
                   className="w-full"
                 />
@@ -128,7 +159,7 @@ const About = () => {
             </CardContent>
           </Card>
 
-          <div className="space-y-8">
+          <div className="space-y-8" id="skills">
             <h2 className="text-2xl font-bold">Key Skills</h2>
             {keySkills.map((skill, index) => (
               <Card key={index}>
@@ -147,6 +178,39 @@ const About = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          <div className="space-y-8 mt-12" id="awesome">
+            <h2 className="text-2xl font-bold">A Bit of Awesomeness</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-2">Bob the Builder</h3>
+                  <h4 className="text-base italic text-gray-600 dark:text-gray-400 mb-4">DIY Addict (Digital & Physical)</h4>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    I can't help myself - I love building stuff! Not just digital products, but actual hands-on projects too. You'll find me down the YouTube rabbit hole researching techniques one day and covered in sawdust (or debugging code) the next. The best part? Standing back with a cold drink, admiring what I've made, and soaking up those "wow, you made that?" comments from friends.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-2">Forrest Gump</h3>
+                  <h4 className="text-base italic text-gray-600 dark:text-gray-400 mb-4">Accidental Marathon Runner</h4>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    "Hey, want to join a Mud Masters obstacle run?" my colleague asked. Somehow that turned into "I'm running a full marathon in 2025!" Classic me - always taking things too far. Now I'm chasing PR's, talking about "splits" at parties, and wondering what I've gotten myself into. But hey, if Forrest can run across America, I can handle 42.195 kilometers... right?
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-2">Creator of Minions</h3>
+                  <h4 className="text-base italic text-gray-600 dark:text-gray-400 mb-4">Professional Cheerleader & Growth Guru</h4>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    No, I haven't created tiny yellow pill-shaped creatures (though that would look great on a resume). Instead, I've mentored colleagues who've gone on to do awesome things. There's something magical about grabbing coffee with someone, listening to their dreams, and helping them plot their next move. Consider me your career DJ - mixing tracks that amplify your talents and get you moving toward your goals.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
