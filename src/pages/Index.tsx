@@ -118,7 +118,8 @@ const Index = () => {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-gray-400 mb-8">
-            The future is AI-driven, and I’m embracing it head-on. I’m actively exploring integrating AI into general use and product development—pushing boundaries, solving problems, and making tech work smarter.
+            The future is AI-driven, and I’m embracing it head-on. I’m actively exploring integrating AI into general use and product development. <br>>
+            <em>Pushing boundaries, solving problems, and making tech work smarter.</em>
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <TooltipProvider>
