@@ -50,8 +50,8 @@ const Index = () => {
       description: "Built a remote audition solution during COVID-19",
       tech: ["SharePoint", "Typeform", "Power Automate"],
       images: [
-        "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+        "https://i.postimg.cc/m29SNV69/undraw-innovative-9l1b.png",
+        "https://cdn.prod.website-files.com/60d07e744f068218f38db4c0/64a6bb36c7c50d4bdb67b172_62dea8562baf3e36c83125d2_Power%2520Automate.jpeg"
       ]
     }
   ];
