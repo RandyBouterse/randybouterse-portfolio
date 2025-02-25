@@ -35,28 +35,76 @@ const ProjectDetails = () => {
       details: [
         "To further showcase my professional expertise, I created Aime, an AI-powered chatbot that helps visitors explore my portfolio. The chatbot answers questions about my career, skills, and projects, simulating a conversation with a hiring manager.",
 
-"Objectives:",
-"- Develop an interactive chatbot for portfolio exploration.",
-"- Automate answers to common career-related questions.",
-"- Simulate professional interactions for a dynamic user experience.",
+    "Objectives:",
+    "- Develop an interactive chatbot for portfolio exploration.",
+    "- Automate answers to common career-related questions.",
+    "- Simulate professional interactions for a dynamic user experience.",
 
-"Approach:",
-"Prompted ChatGPT to simulate a hiring manager’s interview, gathering responses to common questions. Created a detailed chatbot prompt defining its role, scope, and limitations. Iteratively tested and refined the chatbot based on feedback and accuracy.",
+    "Approach:",
+    "Prompted ChatGPT to simulate a hiring manager’s interview, gathering responses to common questions. Created a detailed chatbot prompt defining its role, scope, and limitations. Iteratively tested and refined the chatbot based on feedback and accuracy.",
 
-"Key Results:",
-"Launched a functional AI chatbot to enhance user interaction with my portfolio, gathering valuable feedback for continuous improvements.",
-"Technologies Used:",
-"OpenAI (ChatGPT), Anthropic (Claude), Google (Gemini), Lovable.dev (Portfolio website), analytics for tracking user interactions.",
+    "Key Results:",
+    "Launched a functional AI chatbot to enhance user interaction with my portfolio, gathering valuable feedback for continuous improvements.",
+    "Technologies Used:",
+    "OpenAI (ChatGPT), Anthropic (Claude), Google (Gemini), Lovable.dev (Portfolio website), analytics for tracking user interactions.",
 
-"Next Steps:",
-"- Expand user testing and refine the chatbot’s performance.",
-"- Update the chatbot’s knowledge base for better accuracy."
+    "Next Steps:",
+    "- Expand user testing and refine the chatbot’s performance.",
+    "- Update the chatbot’s knowledge base for better accuracy."
       ],
       images: [
         "https://i.postimg.cc/cCn48qHr/undraw-visionary-technology-6ouq.png",
         "https://i.postimg.cc/NMYnWF5g/image.png"
       ]
     }
+        "portfolio-website": {
+      title: "Portfolio Website",
+      description: "A modern, responsive portfolio website built with React and Tailwind CSS",
+      tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI", "Lovable"],
+      details: [
+        "To showcase my experience with AI products and my technical expertise, I rebuilt my portfolio website using an AI developer. By researching different project manager portfolios and examining what should be included, I began outlining the development process.",
+        "Approach: Researched and created an outline for the AI development agent. Iterated through each prompt, testing buttons and features to ensure proper functionality.",
+        "Key Results:",
+        "Developed a digital portfolio to demonstrate my experience and knowledge. Launched a fully functional website for showcasing my career achievements.",
+        "Technologies Used: GitHub, ChatGPT, AI-powered development tools (Lovable)"
+      ],
+      images: [
+        "https://i.postimg.cc/d050bmpt/undraw-trendy-interface-bm65.png",
+        "https://i.postimg.cc/65Rm5Cn9/image.png"
+      ]
+    },
+      "portfolio-website": {
+      title: "Portfolio Website",
+      description: "A modern, responsive portfolio website built with React and Tailwind CSS",
+      tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI", "Lovable"],
+      details: [
+        "To showcase my experience with AI products and my technical expertise, I rebuilt my portfolio website using an AI developer. By researching different project manager portfolios and examining what should be included, I began outlining the development process.",
+        "Approach: Researched and created an outline for the AI development agent. Iterated through each prompt, testing buttons and features to ensure proper functionality.",
+        "Key Results:",
+        "Developed a digital portfolio to demonstrate my experience and knowledge. Launched a fully functional website for showcasing my career achievements.",
+        "Technologies Used: GitHub, ChatGPT, AI-powered development tools (Lovable)"
+      ],
+      images: [
+        "https://i.postimg.cc/d050bmpt/undraw-trendy-interface-bm65.png",
+        "https://i.postimg.cc/65Rm5Cn9/image.png"
+      ]
+    },
+      "portfolio-website": {
+      title: "Portfolio Website",
+      description: "A modern, responsive portfolio website built with React and Tailwind CSS",
+      tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI", "Lovable"],
+      details: [
+        "To showcase my experience with AI products and my technical expertise, I rebuilt my portfolio website using an AI developer. By researching different project manager portfolios and examining what should be included, I began outlining the development process.",
+        "Approach: Researched and created an outline for the AI development agent. Iterated through each prompt, testing buttons and features to ensure proper functionality.",
+        "Key Results:",
+        "Developed a digital portfolio to demonstrate my experience and knowledge. Launched a fully functional website for showcasing my career achievements.",
+        "Technologies Used: GitHub, ChatGPT, AI-powered development tools (Lovable)"
+      ],
+      images: [
+        "https://i.postimg.cc/d050bmpt/undraw-trendy-interface-bm65.png",
+        "https://i.postimg.cc/65Rm5Cn9/image.png"
+      ]
+    },
   };
 
   const project = projects[id as keyof typeof projects];
