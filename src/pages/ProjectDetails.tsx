@@ -41,8 +41,7 @@ const ProjectDetails = () => {
 "- Simulate professional interactions for a dynamic user experience.",
 
 "Approach:",
-"Prompted ChatGPT to simulate a hiring manager’s interview, gathering responses to common questions.",
-"Created a detailed chatbot prompt defining its role, scope, and limitations. Iteratively tested and refined the chatbot based on feedback and accuracy.",
+"Prompted ChatGPT to simulate a hiring manager’s interview, gathering responses to common questions. Created a detailed chatbot prompt defining its role, scope, and limitations. Iteratively tested and refined the chatbot based on feedback and accuracy.",
 
 "Key Results:",
 "Launched a functional AI chatbot to enhance user interaction with my portfolio, gathering valuable feedback for continuous improvements.",
