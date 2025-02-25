@@ -42,6 +42,7 @@ const Portfolio = () => {
       ]
     },
     {
+      id: "student-information-system",
       title: "Student Information System",
       description: "Implemented a new SIS system and led adoption for 3300+ users",
       tech: ["Educator", "CSS", "HTML", "Kaltura", "MS Teams"],
@@ -51,6 +52,7 @@ const Portfolio = () => {
       ]
     },
     {
+      id: "digital-audition-solution",
       title: "Digital Audition Solution",
       description: "Built a remote audition solution during COVID-19",
       tech: ["SharePoint", "Typeform", "Power Automate"],
@@ -60,6 +62,7 @@ const Portfolio = () => {
       ]
     },
     {
+      id: "office-365-implementation",
       title: "Office 365 implementation",
       description: "Led the implementation of O365 across all faculties for 3,500+ users",
       tech: ["O365", "Kaltura", "MS Teams"],
