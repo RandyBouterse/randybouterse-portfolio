@@ -1,4 +1,3 @@
-
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -34,7 +33,7 @@ const Portfolio = () => {
     {
       id: "customer-service-platform",
       title: "Customer Service Platform",
-      description: "Implemented an omnichannel platform reducing costs and improving efficiancy",
+      description: "Implemented an omnichannel platform reducing costs and improving efficiency",
       tech: ["Sprinklr", "MS Teams", "Sharepoint"],
       images: [
         "https://i.postimg.cc/rFYNk307/undraw-calling-ieh0.png",
@@ -63,14 +62,8 @@ const Portfolio = () => {
     },
     {
       id: "office-365-implementation",
-      title: "Office 365 implementation",
-      description: "Led the implementation of O365 across all faculties for 3,500+ users",
-      tech: ["O365", "Kaltura", "MS Teams"],
-      images: [
-        "https://i.postimg.cc/NML0B2v8/undraw-group-hangout-o22u.png",
-        "https://teknertia.com/wp-content/uploads/2023/05/What-is-Microsoft-365-scaled.jpg"
-      ]
-    }
+      // Additional project details here
+    },
   ];
 
   return (
@@ -103,38 +96,28 @@ const Portfolio = () => {
       </nav>
 
       <div className="container px-4 pt-32">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold mb-8">Portfolio</h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-12">
-            A collection of projects I've worked on, showcasing my experience in product management and development.
-          </p>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Card key={index} className="overflow-hidden">
-                <div className="aspect-video relative overflow-hidden">
-                  <img 
-                    src={project.images[0]} 
+            {projects.map((project) => (
+              <Card key={project.id}>
+                <CardContent>
+                  <img
+                    src={project.images[0]}
                     alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                    className="rounded-lg w-full mb-4"
                   />
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
+                  <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4">
+                    {project.description}
+                  </p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech, i) => (
-                      <Badge key={i} variant="secondary">{tech}</Badge>
+                    {project.tech.map((tech, index) => (
+                      <Badge key={index} variant="secondary">{tech}</Badge>
                     ))}
                   </div>
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
-                    className="gap-2"
-                    onClick={() => navigate(`/portfolio/${project.id}`)}
-                  >
-                    <Link className="w-4 h-4" />
-                    View Details
+                  <Button onClick={() => navigate(`/portfolio/${project.id}`)}>
+                    View Project
                   </Button>
                 </CardContent>
               </Card>
