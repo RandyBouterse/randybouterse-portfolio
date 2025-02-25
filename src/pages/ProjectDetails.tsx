@@ -33,10 +33,25 @@ const ProjectDetails = () => {
       description: "An AI-powered chatbot that helps users explore my portfolio and experience",
       tech: ["OpenAI", "React", "Node.js", "TypeScript"],
       details: [
-        "Developed an AI chatbot using OpenAI's GPT model",
-        "Created a natural conversational interface",
-        "Integrated with portfolio data to provide accurate responses",
-        "Implemented real-time chat functionality"
+        "To further showcase my professional expertise, I created Aime, an AI-powered chatbot that helps visitors explore my portfolio. The chatbot answers questions about my career, skills, and projects, simulating a conversation with a hiring manager.",
+
+"Objectives:",
+"- Develop an interactive chatbot for portfolio exploration.",
+"- Automate answers to common career-related questions.",
+"- Simulate professional interactions for a dynamic user experience.",
+
+"Approach:",
+"Prompted ChatGPT to simulate a hiring manager’s interview, gathering responses to common questions.",
+"Created a detailed chatbot prompt defining its role, scope, and limitations. Iteratively tested and refined the chatbot based on feedback and accuracy.",
+
+"Key Results:",
+"Launched a functional AI chatbot to enhance user interaction with my portfolio, gathering valuable feedback for continuous improvements.",
+"Technologies Used:",
+"OpenAI (ChatGPT), Anthropic (Claude), Google (Gemini), Lovable.dev (Portfolio website), analytics for tracking user interactions.",
+
+"Next Steps:",
+"- Expand user testing and refine the chatbot’s performance.",
+"- Update the chatbot’s knowledge base for better accuracy."
       ],
       images: [
         "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
