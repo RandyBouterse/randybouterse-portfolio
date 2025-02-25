@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import ProjectDetails from "./pages/ProjectDetails";
 import NotFound from "./pages/NotFound";
+import VoiceflowChat from "@/components/VoiceflowChat";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider>
       <TooltipProvider>
+        <VoiceflowChat />
         <Toaster />
         <Sonner />
         <BrowserRouter>
