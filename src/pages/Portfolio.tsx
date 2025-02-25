@@ -9,11 +9,6 @@ import { useNavigate } from "react-router-dom";
 const Portfolio = () => {
   const { theme, setTheme } = useTheme();
   const navigate = useNavigate();
-
-const handleProjectClick = (projectId: string) => {
-  console.log("Navigating to:", `/projects/${projectId}`); // Debugging
-  navigate(`/projects/${projectId}`);
-};
   
   const projects = [
     {
