@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 
 const ProjectDetails = () => {
   const { id } = useParams();
+console.log("Project ID from URL:", id);
+
   const { theme, setTheme } = useTheme();
   const navigate = useNavigate();
 
@@ -116,10 +118,6 @@ const ProjectDetails = () => {
   if (!project) {
     return <div>Project not found</div>;
   }
-
-  const { id } = useParams();
-console.log("Project ID from URL:", id);
-
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-foreground">
