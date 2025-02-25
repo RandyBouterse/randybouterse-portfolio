@@ -35,7 +35,7 @@ const ProjectDetails = () => {
       description: "An AI-powered chatbot that helps users explore my portfolio and experience",
       tech: ["OpenAI", "React", "Node.js", "TypeScript"],
       details: [
-        "To further showcase my professional expertise, I created Aime, an AI-powered chatbot that helps visitors explore my portfolio. The chatbot answers questions about my career, skills, and projects, simulating a conversation with a hiring manager.",
+        "To further showcase my professional expertise, I created AIR (AI Randy), an AI-powered chatbot that helps visitors explore my portfolio. The chatbot answers questions about my career, skills, and projects, simulating a conversation with a hiring manager.",
         "Objectives: Develop an interactive chatbot for portfolio exploration. Automate answers to common career-related questions. Simulate professional interactions for a dynamic user experience.",
         "Approach: Prompted ChatGPT to simulate a hiring manager's interview, gathering responses to common questions. Created a detailed chatbot prompt defining its role, scope, and limitations. Iteratively tested and refined the chatbot based on feedback and accuracy.",
         "Key Results: Launched a functional AI chatbot to enhance user interaction with my portfolio. Gathered valuable feedback for continuous improvements.",
