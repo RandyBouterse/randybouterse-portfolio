@@ -46,9 +46,9 @@ const Index = () => {
       ]
     },
     {
-      title: "Digital Audition Platform",
-      description: "Built a remote audition platform during COVID-19",
-      tech: ["SharePoint", "MS Teams", "Power Automate"],
+      title: "Digital Audition Solution",
+      description: "Built a remote audition solution during COVID-19",
+      tech: ["SharePoint", "Typeform", "Power Automate"],
       images: [
         "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
         "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
