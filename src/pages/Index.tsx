@@ -28,8 +28,8 @@ const Index = () => {
 
   const projects = [
     {
-      title: "Customer Service Platform",
-      description: "Developed an omnichannel platform improving efficiency by 23%",
+      title: "Portfolio Website",
+      description: "A modern, responsive portfolio website built with React and Tailwind CSS",
       tech: ["React", "TypeScript", "Tailwind CSS"],
       images: [
         "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
@@ -37,9 +37,9 @@ const Index = () => {
       ]
     },
     {
-      title: "Student Information System",
-      description: "Revamped the SIS system for 3,300+ users",
-      tech: ["Next.js", "Node.js", "MongoDB"],
+      title: "Aime - Virtual Portfolio Bot",
+      description: "An AI-powered chatbot that helps users explore my portfolio",
+      tech: ["OpenAI", "React", "Node.js"],
       images: [
         "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
         "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
@@ -48,34 +48,7 @@ const Index = () => {
     {
       title: "Digital Audition Platform",
       description: "Built a remote audition platform during COVID-19",
-      tech: ["Vue.js", "Express", "PostgreSQL"],
-      images: [
-        "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
-      ]
-    },
-    {
-      title: "Office 365 Integration",
-      description: "Led the implementation of O365 for 3,500+ users",
-      tech: ["SharePoint", "Azure AD", "Power Automate"],
-      images: [
-        "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-      ]
-    },
-    {
-      title: "GDPR Compliance Tool",
-      description: "Developed tools for managing GDPR requirements",
-      tech: ["Python", "Django", "PostgreSQL"],
-      images: [
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
-      ]
-    },
-    {
-      title: "Analytics Dashboard",
-      description: "Created a real-time analytics platform",
-      tech: ["React", "D3.js", "Firebase"],
+      tech: ["SharePoint", "MS Teams", "Power Automate"],
       images: [
         "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
         "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
@@ -330,15 +303,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      <Button
-        size="lg"
-        className="fixed bottom-8 right-8 rounded-full shadow-lg"
-        onClick={handleChatOpen}
-      >
-        <MessageSquare className="w-5 h-5" />
-        <span className="sr-only">Chat with AI Assistant</span>
-      </Button>
     </div>
   );
 };
