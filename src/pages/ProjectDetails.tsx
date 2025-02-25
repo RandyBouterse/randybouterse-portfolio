@@ -20,12 +20,10 @@ const ProjectDetails = () => {
       tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI", "Lovable"],
       details: [
         "To showcase my experience with AI products and my technical expertise, I rebuilt my portfolio website using an AI developer. By researching different project manager portfolios and examining what should be included, I began outlining the development process.",
-"Approach: Researched and created an outline for the AI development agent. Iterated through each prompt, testing buttons and features to ensure proper functionality. Made adjustments in the GitHub code editor to update text and images as needed.",
-
-"Key Results:"
-"Developed a digital portfolio to demonstrate my experience and knowledge. Launched a fully functional website for showcasing my career achievements.",
-
-"Technologies Used: GitHub, ChatGPT, AI-powered development tools (Lovable)"
+        "Approach: Researched and created an outline for the AI development agent. Iterated through each prompt, testing buttons and features to ensure proper functionality. Made adjustments in the GitHub code editor to update text and images as needed.",
+        "Key Results:",
+        "Developed a digital portfolio to demonstrate my experience and knowledge. Launched a fully functional website for showcasing my career achievements.",
+        "Technologies Used: GitHub, ChatGPT, AI-powered development tools (Lovable)"
       ],
       images: [
         "https://i.postimg.cc/d050bmpt/undraw-trendy-interface-bm65.png",
@@ -46,8 +44,7 @@ const ProjectDetails = () => {
         "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
         "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
       ]
-    },
-    // ... Add other projects here
+    }
   };
 
   const project = projects[id as keyof typeof projects];
