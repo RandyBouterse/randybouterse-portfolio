@@ -18,7 +18,7 @@ const ProjectDetails = () => {
       tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI", "Lovable"],
       details: [
         "To showcase my experience with AI products and my technical expertise, I rebuilt my portfolio website using an AI developer. By researching different project manager portfolios and examining what should be included, I began outlining the development process.",
-        "Approach: Researched and created an outline for the AI development agent. Iterated through each prompt, testing buttons and features to ensure proper functionality.",
+        "Approach: Researched and created an outline for the AI development agent. Iterated through each prompt, testing buttons and features to ensure proper functionality. Made adjustments in the GitHub code editor to update text and images as needed.",
         "Key Results:",
         "Developed a digital portfolio to demonstrate my experience and knowledge. Launched a fully functional website for showcasing my career achievements.",
         "Technologies Used: GitHub, ChatGPT, AI-powered development tools (Lovable)"
@@ -34,97 +34,32 @@ const ProjectDetails = () => {
       tech: ["OpenAI", "React", "Node.js", "TypeScript"],
       details: [
         "To further showcase my professional expertise, I created Aime, an AI-powered chatbot that helps visitors explore my portfolio. The chatbot answers questions about my career, skills, and projects, simulating a conversation with a hiring manager.",
-
-    "Objectives:",
-    "- Develop an interactive chatbot for portfolio exploration.",
-    "- Automate answers to common career-related questions.",
-    "- Simulate professional interactions for a dynamic user experience.",
-
-    "Approach:",
-    "Prompted ChatGPT to simulate a hiring manager’s interview, gathering responses to common questions. Created a detailed chatbot prompt defining its role, scope, and limitations. Iteratively tested and refined the chatbot based on feedback and accuracy.",
-
-    "Key Results:",
-    "Launched a functional AI chatbot to enhance user interaction with my portfolio, gathering valuable feedback for continuous improvements.",
-    "Technologies Used:",
-    "OpenAI (ChatGPT), Anthropic (Claude), Google (Gemini), Lovable.dev (Portfolio website), analytics for tracking user interactions.",
-
-    "Next Steps:",
-    "- Expand user testing and refine the chatbot’s performance.",
-    "- Update the chatbot’s knowledge base for better accuracy."
+        "Objectives: Develop an interactive chatbot for portfolio exploration. Automate answers to common career-related questions. Simulate professional interactions for a dynamic user experience.",
+        "Approach: Prompted ChatGPT to simulate a hiring manager's interview, gathering responses to common questions. Created a detailed chatbot prompt defining its role, scope, and limitations. Iteratively tested and refined the chatbot based on feedback and accuracy.",
+        "Key Results: Launched a functional AI chatbot to enhance user interaction with my portfolio. Gathered valuable feedback for continuous improvements.",
+        "Technologies Used: OpenAI (ChatGPT), Anthropic (Claude), Google (Gemini), Lovable.dev (Portfolio website), analytics for tracking user interactions."
       ],
       images: [
         "https://i.postimg.cc/cCn48qHr/undraw-visionary-technology-6ouq.png",
         "https://i.postimg.cc/NMYnWF5g/image.png"
       ]
     },
-
-    "customer-service-platform": {,
+    "customer-service-platform": {
       title: "Customer Service Platform",
-      description: "Implemented an omnichannel platform reducing costs and improving efficiancy",
+      description: "Implemented an omnichannel platform reducing costs and improving efficiency",
       tech: ["Sprinklr", "MS Teams", "Sharepoint"],
-     details: [
-        "To showcase my experience with AI products and my technical expertise, I rebuilt my portfolio website using an AI developer. By researching different project manager portfolios and examining what should be included, I began outlining the development process.",
-        "Approach: Researched and created an outline for the AI development agent. Iterated through each prompt, testing buttons and features to ensure proper functionality.",
-        "Key Results:",
-        "Developed a digital portfolio to demonstrate my experience and knowledge. Launched a fully functional website for showcasing my career achievements.",
-        "Technologies Used: GitHub, ChatGPT, AI-powered development tools (Lovable)"
-      ],
-      images: [
-        "https://i.postimg.cc/rFYNk307/undraw-calling-ieh0.png",
-        "https://prod2-sprcdn-assets.sprinklr.com/50400/67e03d55-c284-4302-8235-14a3766c0ac0-137156522/Screenshot_2023-04-13_at_3.29..png"
-        ]
-        },
-
-      "customer-service-platform": {,
-      title: "Customer Service Platform",
-      description: "Implemented an omnichannel platform reducing costs and improving efficiancy",
-      tech: ["Sprinklr", "MS Teams", "Sharepoint"],
-        details: [
-        "To showcase my experience with AI products and my technical expertise, I rebuilt my portfolio website using an AI developer. By researching different project manager portfolios and examining what should be included, I began outlining the development process.",
-        "Approach: Researched and created an outline for the AI development agent. Iterated through each prompt, testing buttons and features to ensure proper functionality.",
-        "Key Results:",
-        "Developed a digital portfolio to demonstrate my experience and knowledge. Launched a fully functional website for showcasing my career achievements.",
-        "Technologies Used: GitHub, ChatGPT, AI-powered development tools (Lovable)"
+      details: [
+        "During the pandemic, I led the implementation of a new customer service platform to improve efficiency and reduce costs while maintaining high service quality.",
+        "Objectives: Streamline customer service operations. Reduce operational costs. Improve service quality and response times.",
+        "Approach: Selected and implemented Sprinklr as our omnichannel platform. Integrated with existing systems and trained staff on new processes.",
+        "Key Results: Successfully reduced operational costs while improving customer satisfaction scores. Streamlined workflow processes and enhanced team collaboration.",
+        "Technologies Used: Sprinklr, Microsoft Teams, SharePoint, Power Automate"
       ],
       images: [
         "https://i.postimg.cc/rFYNk307/undraw-calling-ieh0.png",
         "https://prod2-sprcdn-assets.sprinklr.com/50400/67e03d55-c284-4302-8235-14a3766c0ac0-137156522/Screenshot_2023-04-13_at_3.29..png"
       ]
-      },
-    
-      "Student Information System": {,
-      description: "Implemented a new SIS system and led adoption for 3300+ users",
-      tech: ["Educator", "CSS", "HTML", "Kaltura", "MS Teams"],
-        details: [
-        "To showcase my experience with AI products and my technical expertise, I rebuilt my portfolio website using an AI developer. By researching different project manager portfolios and examining what should be included, I began outlining the development process.",
-        "Approach: Researched and created an outline for the AI development agent. Iterated through each prompt, testing buttons and features to ensure proper functionality.",
-        "Key Results:",
-        "Developed a digital portfolio to demonstrate my experience and knowledge. Launched a fully functional website for showcasing my career achievements.",
-        "Technologies Used: GitHub, ChatGPT, AI-powered development tools (Lovable)"
-      ],
-      images: [
-        "https://i.postimg.cc/76b3CN2f/undraw-online-collaboration-xon8.png",
-        "https://www.educator.eu/wp-content/uploads/Educator_imac_macbook_ipad-1024x683.png"
-      ]
-    },
-  
-  
-     "Digital Audition Solution": {,
-      description: "Built a remote audition solution during COVID-19",
-      tech: ["SharePoint", "Typeform", "Power Automate"],
-        details: [
-        "To showcase my experience with AI products and my technical expertise, I rebuilt my portfolio website using an AI developer. By researching different project manager portfolios and examining what should be included, I began outlining the development process.",
-        "Approach: Researched and created an outline for the AI development agent. Iterated through each prompt, testing buttons and features to ensure proper functionality.",
-        "Key Results:",
-        "Developed a digital portfolio to demonstrate my experience and knowledge. Launched a fully functional website for showcasing my career achievements.",
-        "Technologies Used: GitHub, ChatGPT, AI-powered development tools (Lovable)"
-      ],
-      images: [
-        "https://i.postimg.cc/m29SNV69/undraw-innovative-9l1b.png",
-        "https://cdn.prod.website-files.com/60d07e744f068218f38db4c0/64a6bb36c7c50d4bdb67b172_62dea8562baf3e36c83125d2_Power%2520Automate.jpeg"
-      ]
-     },
-       
+    }
   };
 
   const project = projects[id as keyof typeof projects];
