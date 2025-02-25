@@ -117,6 +117,10 @@ const ProjectDetails = () => {
     return <div>Project not found</div>;
   }
 
+  const { id } = useParams();
+console.log("Project ID from URL:", id);
+
+
   return (
     <div className="min-h-screen bg-white dark:bg-black text-foreground">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800">
