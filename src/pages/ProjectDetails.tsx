@@ -43,7 +43,7 @@ const ProjectDetails = () => {
       ],
       images: [
         "https://i.postimg.cc/cCn48qHr/undraw-visionary-technology-6ouq.png",
-        "https://i.postimg.cc/NMYnWF5g/image.png"
+        "https://i.postimg.cc/rFD7RC5s/A7-B6617-E-93-E0-46-E5-BDBD-19-DE5-B03-B9-E4.png"
       ]
     },
     "customer-service-platform": {
