@@ -23,13 +23,13 @@ const ProjectDetails = () => {
 "Approach: Researched and created an outline for the AI development agent. Iterated through each prompt, testing buttons and features to ensure proper functionality. Made adjustments in the GitHub code editor to update text and images as needed.",
 
 "Key Results:"
-"Developed a digital portfolio to demonstrate my experience and knowledge. Launched a fully functional website for showcasing my career achievements.,
+"Developed a digital portfolio to demonstrate my experience and knowledge. Launched a fully functional website for showcasing my career achievements.",
 
 "Technologies Used: GitHub, ChatGPT, AI-powered development tools (Lovable)"
       ],
       images: [
-        "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+        "https://i.postimg.cc/d050bmpt/undraw-trendy-interface-bm65.png",
+        "https://i.postimg.cc/65Rm5Cn9/image.png"
       ]
     },
     "aime-bot": {
