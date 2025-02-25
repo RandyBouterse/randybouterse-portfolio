@@ -53,8 +53,8 @@ const ProjectDetails = () => {
 "- Update the chatbot’s knowledge base for better accuracy."
       ],
       images: [
-        "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+        "https://i.postimg.cc/cCn48qHr/undraw-visionary-technology-6ouq.png",
+        "https://i.postimg.cc/NMYnWF5g/image.png"
       ]
     }
   };
