@@ -36,13 +36,13 @@ const Index = () => {
         "https://i.postimg.cc/65Rm5Cn9/image.png"
       ]
     },
-    {
+    {      
       title: "Aime - Virtual Portfolio Bot",
-      description: "An AI-powered chatbot that helps users explore my portfolio",
-      tech: ["OpenAI", "React", "Node.js"],
+      description: "An AI-powered chatbot that helps users explore my portfolio and experience",
+      tech: ["OpenAI", "React", "Node.js", "TypeScript"],
       images: [
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+        "https://i.postimg.cc/cCn48qHr/undraw-visionary-technology-6ouq.png",
+        "https://i.postimg.cc/NMYnWF5g/image.png"
       ]
     },
     {
