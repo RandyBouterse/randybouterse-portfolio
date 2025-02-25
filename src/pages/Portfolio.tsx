@@ -23,7 +23,7 @@ const Portfolio = () => {
     },
     {
       id: "aime-bot",
-      title: "Aime - Virtual Portfolio Bot",
+      title: "AIR - AI Randy - Virtual Portfolio Bot",
       description: "An AI-powered chatbot that helps users explore my portfolio and experience",
       tech: ["OpenAI ChatGPT", "Anthropic Claude", "Google Gemini", "Voiceflow"],
       images: [
