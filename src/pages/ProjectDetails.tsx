@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -12,7 +11,6 @@ const ProjectDetails = () => {
   const { theme, setTheme } = useTheme();
   const navigate = useNavigate();
 
-  // You would typically fetch this data from an API or database
   const projects = {
     "portfolio-website": {
       title: "Portfolio Website",
@@ -118,14 +116,13 @@ const ProjectDetails = () => {
           <Card>
             <CardContent className="p-6">
               <h2 className="text-2xl font-bold mb-4">Project Details</h2>
-              <ul className="space-y-4">
+              <div className="space-y-4">
                 {project.details.map((detail, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 mt-2 bg-primary rounded-full"></span>
-                    <span className="text-gray-600 dark:text-gray-400">{detail}</span>
-                  </li>
+                  <p key={index} className="text-gray-600 dark:text-gray-400">
+                    {detail}
+                  </p>
                 ))}
-              </ul>
+              </div>
             </CardContent>
           </Card>
         </div>
