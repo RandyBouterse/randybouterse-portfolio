@@ -72,14 +72,30 @@ const ProjectDetails = () => {
       images: [
         "https://i.postimg.cc/rFYNk307/undraw-calling-ieh0.png",
         "https://prod2-sprcdn-assets.sprinklr.com/50400/67e03d55-c284-4302-8235-14a3766c0ac0-137156522/Screenshot_2023-04-13_at_3.29..png"
+        ]
         },
 
+      "customer-service-platform": {,
+      title: "Customer Service Platform",
+      description: "Implemented an omnichannel platform reducing costs and improving efficiancy",
+      tech: ["Sprinklr", "MS Teams", "Sharepoint"],
+        details: [
+        "To showcase my experience with AI products and my technical expertise, I rebuilt my portfolio website using an AI developer. By researching different project manager portfolios and examining what should be included, I began outlining the development process.",
+        "Approach: Researched and created an outline for the AI development agent. Iterated through each prompt, testing buttons and features to ensure proper functionality.",
+        "Key Results:",
+        "Developed a digital portfolio to demonstrate my experience and knowledge. Launched a fully functional website for showcasing my career achievements.",
+        "Technologies Used: GitHub, ChatGPT, AI-powered development tools (Lovable)"
+      ],
+      images: [
+        "https://i.postimg.cc/rFYNk307/undraw-calling-ieh0.png",
+        "https://prod2-sprcdn-assets.sprinklr.com/50400/67e03d55-c284-4302-8235-14a3766c0ac0-137156522/Screenshot_2023-04-13_at_3.29..png"
+      ]
+      },
     
-        "portfolio-website": {
-      title: "Portfolio Website",
-      description: "A modern, responsive portfolio website built with React and Tailwind CSS",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI", "Lovable"],
-      details: [
+      "Student Information System": {,
+      description: "Implemented a new SIS system and led adoption for 3300+ users",
+      tech: ["Educator", "CSS", "HTML", "Kaltura", "MS Teams"],
+        details: [
         "To showcase my experience with AI products and my technical expertise, I rebuilt my portfolio website using an AI developer. By researching different project manager portfolios and examining what should be included, I began outlining the development process.",
         "Approach: Researched and created an outline for the AI development agent. Iterated through each prompt, testing buttons and features to ensure proper functionality.",
         "Key Results:",
@@ -87,15 +103,16 @@ const ProjectDetails = () => {
         "Technologies Used: GitHub, ChatGPT, AI-powered development tools (Lovable)"
       ],
       images: [
-        "https://i.postimg.cc/d050bmpt/undraw-trendy-interface-bm65.png",
-        "https://i.postimg.cc/65Rm5Cn9/image.png"
+        "https://i.postimg.cc/76b3CN2f/undraw-online-collaboration-xon8.png",
+        "https://www.educator.eu/wp-content/uploads/Educator_imac_macbook_ipad-1024x683.png"
       ]
     },
-      "portfolio-website": {
-      title: "Portfolio Website",
-      description: "A modern, responsive portfolio website built with React and Tailwind CSS",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI", "Lovable"],
-      details: [
+  
+  
+     "Digital Audition Solution": {,
+      description: "Built a remote audition solution during COVID-19",
+      tech: ["SharePoint", "Typeform", "Power Automate"],
+        details: [
         "To showcase my experience with AI products and my technical expertise, I rebuilt my portfolio website using an AI developer. By researching different project manager portfolios and examining what should be included, I began outlining the development process.",
         "Approach: Researched and created an outline for the AI development agent. Iterated through each prompt, testing buttons and features to ensure proper functionality.",
         "Key Results:",
@@ -103,26 +120,11 @@ const ProjectDetails = () => {
         "Technologies Used: GitHub, ChatGPT, AI-powered development tools (Lovable)"
       ],
       images: [
-        "https://i.postimg.cc/d050bmpt/undraw-trendy-interface-bm65.png",
-        "https://i.postimg.cc/65Rm5Cn9/image.png"
+        "https://i.postimg.cc/m29SNV69/undraw-innovative-9l1b.png",
+        "https://cdn.prod.website-files.com/60d07e744f068218f38db4c0/64a6bb36c7c50d4bdb67b172_62dea8562baf3e36c83125d2_Power%2520Automate.jpeg"
       ]
-    },
-      "portfolio-website": {
-      title: "Portfolio Website",
-      description: "A modern, responsive portfolio website built with React and Tailwind CSS",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI", "Lovable"],
-      details: [
-        "To showcase my experience with AI products and my technical expertise, I rebuilt my portfolio website using an AI developer. By researching different project manager portfolios and examining what should be included, I began outlining the development process.",
-        "Approach: Researched and created an outline for the AI development agent. Iterated through each prompt, testing buttons and features to ensure proper functionality.",
-        "Key Results:",
-        "Developed a digital portfolio to demonstrate my experience and knowledge. Launched a fully functional website for showcasing my career achievements.",
-        "Technologies Used: GitHub, ChatGPT, AI-powered development tools (Lovable)"
-      ],
-      images: [
-        "https://i.postimg.cc/d050bmpt/undraw-trendy-interface-bm65.png",
-        "https://i.postimg.cc/65Rm5Cn9/image.png"
-      ]
-    },
+     },
+       
   };
 
   const project = projects[id as keyof typeof projects];
