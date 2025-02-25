@@ -1,7 +1,8 @@
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Circle, Link, Sun, Moon } from "lucide-react";
+import { Circle, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useNavigate } from "react-router-dom";
 
@@ -62,8 +63,14 @@ const Portfolio = () => {
     },
     {
       id: "office-365-implementation",
-      // Additional project details here
-    },
+      title: "Office 365 Implementation",
+      description: "Led the implementation of O365 across all faculties for 3,500+ users",
+      tech: ["O365", "Kaltura", "MS Teams"],
+      images: [
+        "https://i.postimg.cc/NML0B2v8/undraw-group-hangout-o22u.png",
+        "https://teknertia.com/wp-content/uploads/2023/05/What-is-Microsoft-365-scaled.jpg"
+      ]
+    }
   ];
 
   return (
