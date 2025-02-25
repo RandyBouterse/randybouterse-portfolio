@@ -30,7 +30,7 @@ const Index = () => {
     {     
       title: "Portfolio Website",
       description: "A modern, responsive portfolio website built with React and Tailwind CSS",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI", "Lovable",
+      tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI", "Lovable",]
       images: [
         "https://i.postimg.cc/d050bmpt/undraw-trendy-interface-bm65.png",
         "https://i.postimg.cc/65Rm5Cn9/image.png"
