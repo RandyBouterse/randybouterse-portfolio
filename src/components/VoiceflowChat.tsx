@@ -15,9 +15,10 @@ declare global {
 
 const VoiceflowChat = () => {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.onload = () => {
+    const v = document.createElement('script');
+    const s = document.getElementsByTagName('script')[0];
+
+    v.onload = () => {
       window.voiceflow.chat.load({
         verify: { projectID: '67bc497499bc896ade5221f5' },
         url: 'https://general-runtime.voiceflow.com',
@@ -27,11 +28,14 @@ const VoiceflowChat = () => {
         }
       });
     };
-    script.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
-    document.body.appendChild(script);
+
+    v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+    v.type = "text/javascript";
+    s.parentNode?.insertBefore(v, s);
 
     return () => {
-      document.body.removeChild(script);
+      // Cleanup: remove the script when component unmounts
+      v.parentNode?.removeChild(v);
     };
   }, []);
 
