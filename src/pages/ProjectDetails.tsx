@@ -56,7 +56,25 @@ const ProjectDetails = () => {
         "https://i.postimg.cc/cCn48qHr/undraw-visionary-technology-6ouq.png",
         "https://i.postimg.cc/NMYnWF5g/image.png"
       ]
-    }
+    },
+
+    "customer-service-platform": {,
+      title: "Customer Service Platform",
+      description: "Implemented an omnichannel platform reducing costs and improving efficiancy",
+      tech: ["Sprinklr", "MS Teams", "Sharepoint"],
+     details: [
+        "To showcase my experience with AI products and my technical expertise, I rebuilt my portfolio website using an AI developer. By researching different project manager portfolios and examining what should be included, I began outlining the development process.",
+        "Approach: Researched and created an outline for the AI development agent. Iterated through each prompt, testing buttons and features to ensure proper functionality.",
+        "Key Results:",
+        "Developed a digital portfolio to demonstrate my experience and knowledge. Launched a fully functional website for showcasing my career achievements.",
+        "Technologies Used: GitHub, ChatGPT, AI-powered development tools (Lovable)"
+      ],
+      images: [
+        "https://i.postimg.cc/rFYNk307/undraw-calling-ieh0.png",
+        "https://prod2-sprcdn-assets.sprinklr.com/50400/67e03d55-c284-4302-8235-14a3766c0ac0-137156522/Screenshot_2023-04-13_at_3.29..png"
+        },
+
+    
         "portfolio-website": {
       title: "Portfolio Website",
       description: "A modern, responsive portfolio website built with React and Tailwind CSS",
