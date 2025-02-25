@@ -28,6 +28,7 @@ const Index = () => {
 
   const projects = [
     {     
+      id: "portfolio-website",
       title: "Portfolio Website",
       description: "A modern, responsive portfolio website built with React and Tailwind CSS",
       tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI", "Lovable"],
@@ -37,6 +38,7 @@ const Index = () => {
       ]
     },
     {      
+      id: "aime-bot",
       title: "Aime - Virtual Portfolio Bot",
       description: "An AI-powered chatbot that helps users explore my portfolio and experience",
       tech: ["OpenAI", "React", "Node.js", "TypeScript"],
@@ -46,6 +48,7 @@ const Index = () => {
       ]
     },
     {
+      id: "digital-audition-solution",
       title: "Digital Audition Solution",
       description: "Built a remote audition solution during COVID-19",
       tech: ["SharePoint", "Typeform", "Power Automate"],
@@ -216,28 +219,26 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {projects.slice(0, 6).map((project, index) => (
-              <Card key={index} className="overflow-hidden">
-                <div className="aspect-video relative overflow-hidden">
-                  <img 
-                    src={project.images[0]} 
-                    alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech, i) => (
-                      <Badge key={i} variant="secondary">{tech}</Badge>
-                    ))}
+              <a href={`/portfolio/${project.id}`} key={index}>
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <div className="aspect-video relative overflow-hidden">
+                    <img 
+                      src={project.images[0]} 
+                      alt={project.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                    />
                   </div>
-                  <Button variant="ghost" size="sm" className="gap-2">
-                    <Link className="w-4 h-4" />
-                    View more
-                  </Button>
-                </CardContent>
-              </Card>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, i) => (
+                        <Badge key={i} variant="secondary">{tech}</Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </a>
             ))}
           </div>
           <div className="flex justify-center mt-12">
