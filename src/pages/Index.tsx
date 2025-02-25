@@ -27,13 +27,13 @@ const Index = () => {
   };
 
   const projects = [
-    {
+    {     
       title: "Portfolio Website",
       description: "A modern, responsive portfolio website built with React and Tailwind CSS",
-      tech: ["React", "TypeScript", "Tailwind CSS"],
+      tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI", "Lovable",
       images: [
-        "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+        "https://i.postimg.cc/d050bmpt/undraw-trendy-interface-bm65.png",
+        "https://i.postimg.cc/65Rm5Cn9/image.png"
       ]
     },
     {
