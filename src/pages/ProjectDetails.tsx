@@ -1,5 +1,7 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button"; // Add Button import
 import { Circle, Sun, Moon, ArrowLeft } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useNavigate, useParams } from "react-router-dom";
@@ -50,8 +52,64 @@ const ProjectDetails = () => {
       tech: ["Sprinklr", "MS Teams", "Sharepoint"],
       details: [
         "During the pandemic, I led the implementation of a new customer service platform to improve efficiency and reduce costs while maintaining high service quality.",
+        "Objectives: Streamline customer service operations. Reduce operational costs. Improve service quality and response times.",
+        "Approach: Selected and implemented Sprinklr as our omnichannel platform. Integrated with existing systems and trained staff on new processes.",
+        "Key Results: Successfully reduced operational costs while improving customer satisfaction scores. Streamlined workflow processes and enhanced team collaboration.",
+        "Technologies Used: Sprinklr, Microsoft Teams, SharePoint, Power Automate"
       ],
+      images: [
+        "https://i.postimg.cc/rFYNk307/undraw-calling-ieh0.png",
+        "https://prod2-sprcdn-assets.sprinklr.com/50400/67e03d55-c284-4302-8235-14a3766c0ac0-137156522/Screenshot_2023-04-13_at_3.29..png"
+      ]
     },
+    "student-information-system": {
+      title: "Student Information System",
+      description: "Implemented a new SIS system and led adoption for 3300+ users",
+      tech: ["Educator", "CSS", "HTML", "Kaltura", "MS Teams"],
+      details: [
+        "Led the implementation and adoption of a new Student Information System to enhance educational operations and user experience.",
+        "Objectives: Streamline student data management. Improve accessibility for staff and students. Enhance reporting capabilities.",
+        "Approach: Selected and customized the Educator platform. Developed comprehensive training materials and conducted workshops. Managed data migration and system integration.",
+        "Key Results: Successfully onboarded 3,300+ users. Improved data accuracy and reporting efficiency. Enhanced student and staff experience.",
+        "Technologies Used: Educator SIS, Kaltura, Microsoft Teams, SharePoint"
+      ],
+      images: [
+        "https://i.postimg.cc/76b3CN2f/undraw-online-collaboration-xon8.png",
+        "https://www.educator.eu/wp-content/uploads/Educator_imac_macbook_ipad-1024x683.png"
+      ]
+    },
+    "digital-audition-solution": {
+      title: "Digital Audition Solution",
+      description: "Built a remote audition solution during COVID-19",
+      tech: ["SharePoint", "Typeform", "Power Automate"],
+      details: [
+        "In response to COVID-19 restrictions, developed a digital solution for conducting remote auditions to ensure program continuity.",
+        "Objectives: Create a seamless remote audition process. Maintain high-quality assessment standards. Ensure accessible and user-friendly experience.",
+        "Approach: Implemented SharePoint and Typeform integration. Automated workflow processes with Power Automate. Created comprehensive user guides.",
+        "Key Results: Successfully transitioned to fully remote auditions. Maintained program quality and participation rates. Improved administrative efficiency.",
+        "Technologies Used: SharePoint, Typeform, Microsoft Power Automate, Microsoft Teams"
+      ],
+      images: [
+        "https://i.postimg.cc/m29SNV69/undraw-innovative-9l1b.png",
+        "https://cdn.prod.website-files.com/60d07e744f068218f38db4c0/64a6bb36c7c50d4bdb67b172_62dea8562baf3e36c83125d2_Power%2520Automate.jpeg"
+      ]
+    },
+    "office-365-implementation": {
+      title: "Office 365 Implementation",
+      description: "Led the implementation of O365 across all faculties for 3,500+ users",
+      tech: ["O365", "Kaltura", "MS Teams"],
+      details: [
+        "Spearheaded the organization-wide implementation of Office 365 to modernize workplace collaboration and productivity tools.",
+        "Objectives: Modernize workplace tools. Improve collaboration capabilities. Enhance data security and accessibility.",
+        "Approach: Planned phased rollout across faculties. Developed comprehensive training programs. Managed change communication and user adoption.",
+        "Key Results: Successfully migrated 3,500+ users to O365. Improved collaboration and productivity. Enhanced security and compliance measures.",
+        "Technologies Used: Microsoft Office 365, Microsoft Teams, SharePoint, Kaltura"
+      ],
+      images: [
+        "https://i.postimg.cc/NML0B2v8/undraw-group-hangout-o22u.png",
+        "https://teknertia.com/wp-content/uploads/2023/05/What-is-Microsoft-365-scaled.jpg"
+      ]
+    }
   };
 
   // Check if the id is valid and exists in the projects object
