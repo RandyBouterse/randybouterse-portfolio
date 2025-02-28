@@ -4,37 +4,13 @@ import { isSameDay, parseISO } from "date-fns";
 import { Update, updates } from "@/data/updates";
 import UpdateCard from "@/components/UpdateCard";
 import UpdateDatePicker from "@/components/UpdateDatePicker";
-import { ArrowUp, Circle, Sun, Moon, Hash } from "lucide-react";
+import { ArrowUp, Circle, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { useTheme } from "next-themes";
-
-const extractHashtags = (content: string): string[] => {
-  const hashtagRegex = /#(\w+)/g;
-  const matches = content.match(hashtagRegex);
-  if (!matches) return [];
-  return matches.map(tag => tag.substring(1));
-};
-
-const getAllHashtags = (updates: Update[]): string[] => {
-  const allTags: string[] = [];
-  updates.forEach(update => {
-    const tags = extractHashtags(update.content);
-    tags.forEach(tag => {
-      if (!allTags.includes(tag)) {
-        allTags.push(tag);
-      }
-    });
-  });
-  return allTags;
-};
 
 const LatestUpdatesPage = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
-  const [selectedHashtag, setSelectedHashtag] = useState<string | null>(null);
   const { theme, setTheme } = useTheme();
-
-  const allHashtags = useMemo(() => getAllHashtags(updates), [updates]);
 
   const filteredUpdates = useMemo(() => {
     let filtered = [...updates]; // Create a copy to avoid mutations
@@ -45,19 +21,11 @@ const LatestUpdatesPage = () => {
       );
     }
     
-    if (selectedHashtag) {
-      filtered = filtered.filter(update => {
-        const updateTags = extractHashtags(update.content);
-        return updateTags.includes(selectedHashtag);
-      });
-    }
-    
     return filtered;
-  }, [selectedDate, selectedHashtag, updates]);
+  }, [selectedDate, updates]);
 
   const handleSelectDate = (date: Date) => {
     setSelectedDate(date);
-    setSelectedHashtag(null);
   };
 
   const handleLatestUpdate = () => {
@@ -67,17 +35,6 @@ const LatestUpdatesPage = () => {
         .sort((a, b) => b.getTime() - a.getTime());
       
       setSelectedDate(sortedDates[0]);
-      setSelectedHashtag(null);
-    }
-  };
-
-  const handleHashtagClick = (hashtag: string) => {
-    console.log("Hashtag clicked in LatestUpdatesPage:", hashtag);
-    if (selectedHashtag === hashtag) {
-      setSelectedHashtag(null);
-    } else {
-      setSelectedHashtag(hashtag);
-      setSelectedDate(undefined);
     }
   };
 
@@ -119,22 +76,20 @@ const LatestUpdatesPage = () => {
             <div className="md:col-span-2 space-y-4">
               {filteredUpdates.length > 0 ? (
                 filteredUpdates.map(update => (
-                  <UpdateCard key={update.id} update={update} onHashtagClick={handleHashtagClick} />
+                  <UpdateCard key={update.id} update={update} />
                 ))
               ) : (
                 <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm border border-gray-200 dark:border-gray-700 text-center">
                   <p className="text-gray-500 dark:text-gray-400">No updates found</p>
-                  {selectedHashtag && (
-                    <div className="mt-2">
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
-                        onClick={() => setSelectedHashtag(null)}
-                      >
-                        Clear hashtag filter
-                      </Button>
-                    </div>
-                  )}
+                  <div className="mt-2">
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      onClick={() => setSelectedDate(undefined)}
+                    >
+                      Show all updates
+                    </Button>
+                  </div>
                 </div>
               )}
             </div>
@@ -161,23 +116,15 @@ const LatestUpdatesPage = () => {
                   selectedDate={selectedDate}
                 />
                 
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Hash className="h-4 w-4 text-gray-500" />
-                    <h3 className="text-sm font-medium">Filter by hashtag</h3>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {allHashtags.map(hashtag => (
-                      <Badge 
-                        key={hashtag}
-                        variant={selectedHashtag === hashtag ? "default" : "outline"}
-                        className="cursor-pointer"
-                        onClick={() => handleHashtagClick(hashtag)}
-                      >
-                        #{hashtag}
-                      </Badge>
-                    ))}
-                  </div>
+                <div className="mt-4">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    onClick={() => setSelectedDate(undefined)}
+                    className="w-full"
+                  >
+                    Show All Updates
+                  </Button>
                 </div>
               </div>
             </div>

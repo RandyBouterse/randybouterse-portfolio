@@ -5,64 +5,12 @@ import { Media, Update } from "@/data/updates";
 import MediaCarousel from "./MediaCarousel";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
-import { Badge } from "@/components/ui/badge";
 
 interface UpdateCardProps {
   update: Update;
-  onHashtagClick?: (hashtag: string) => void;
 }
 
-// Function to extract hashtags from update content
-const extractHashtags = (content: string): string[] => {
-  const hashtagRegex = /#(\w+)/g;
-  const matches = content.match(hashtagRegex);
-  if (!matches) return [];
-  return matches.map(tag => tag.substring(1)); // Remove the # symbol
-};
-
-// Function to render content with clickable hashtags
-const renderContentWithHashtags = (content: string, onHashtagClick?: (hashtag: string) => void) => {
-  if (!onHashtagClick) {
-    return <p className="text-gray-800 dark:text-gray-200">{content}</p>;
-  }
-
-  // Split content by space and render each word, making hashtags clickable
-  const parts = [];
-  const words = content.split(' ');
-  
-  for (let i = 0; i < words.length; i++) {
-    const word = words[i];
-    if (word.startsWith('#')) {
-      const hashtag = word.substring(1);
-      parts.push(
-        <span key={i} className="inline-block">
-          <span 
-            className="cursor-pointer text-primary hover:underline"
-            onClick={(e) => {
-              e.stopPropagation();
-              console.log("Hashtag clicked:", hashtag);
-              onHashtagClick && onHashtagClick(hashtag);
-            }}
-          >
-            #{hashtag}
-          </span>
-          {i < words.length - 1 ? ' ' : ''}
-        </span>
-      );
-    } else {
-      parts.push(
-        <span key={i}>
-          {word}
-          {i < words.length - 1 ? ' ' : ''}
-        </span>
-      );
-    }
-  }
-
-  return <p className="text-gray-800 dark:text-gray-200">{parts}</p>;
-};
-
-const UpdateCard = ({ update, onHashtagClick }: UpdateCardProps) => {
+const UpdateCard = ({ update }: UpdateCardProps) => {
   const [mediaViewerOpen, setMediaViewerOpen] = useState(false);
   const [initialMediaIndex, setInitialMediaIndex] = useState(0);
   const [liked, setLiked] = useState(false);
@@ -105,7 +53,7 @@ const UpdateCard = ({ update, onHashtagClick }: UpdateCardProps) => {
       </div>
 
       <div className="mb-3">
-        {renderContentWithHashtags(update.content, onHashtagClick)}
+        <p className="text-gray-800 dark:text-gray-200">{update.content}</p>
       </div>
 
       {update.media && update.media.length > 0 && (
