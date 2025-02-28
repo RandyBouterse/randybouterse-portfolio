@@ -67,5 +67,14 @@ export const updates: Update[] = [
     likes: 76,
     comments: 15,
     shares: 9
+  },
+  {
+    id: '4',
+    content: "Finished analyzing the quarterly user research data for our flagship product. The insights we gained will drive our roadmap for the next two quarters. Customer feedback is gold! #UserResearch #ProductStrategy",
+    date: '2024-06-01T09:15:00',
+    time: '9:15 AM',
+    likes: 51,
+    comments: 8,
+    shares: 4
   }
 ];
