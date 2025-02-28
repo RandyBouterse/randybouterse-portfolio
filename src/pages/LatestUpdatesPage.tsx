@@ -1,5 +1,5 @@
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { isSameDay, parseISO } from "date-fns";
 import { Update, updates } from "@/data/updates";
 import UpdateCard from "@/components/UpdateCard";

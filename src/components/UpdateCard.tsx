@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Heart, Calendar } from "lucide-react";
 import { Media, Update } from "@/data/updates";
@@ -25,33 +26,40 @@ const renderContentWithHashtags = (content: string, onHashtagClick?: (hashtag: s
     return <p className="text-gray-800 dark:text-gray-200">{content}</p>;
   }
 
+  // Split content by space and render each word, making hashtags clickable
+  const parts = [];
   const words = content.split(' ');
-  return (
-    <p className="text-gray-800 dark:text-gray-200">
-      {words.map((word, index) => {
-        if (word.startsWith('#')) {
-          const hashtag = word.substring(1);
-          return (
-            <span key={index}>
-              <Badge 
-                variant="secondary"
-                className="cursor-pointer mr-1 inline-flex"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  console.log("Badge clicked for hashtag:", hashtag);
-                  onHashtagClick(hashtag);
-                }}
-              >
-                #{hashtag}
-              </Badge>
-              {' '}
-            </span>
-          );
-        }
-        return <span key={index}>{word} </span>;
-      })}
-    </p>
-  );
+  
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
+    if (word.startsWith('#')) {
+      const hashtag = word.substring(1);
+      parts.push(
+        <span key={i} className="inline-block">
+          <span 
+            className="cursor-pointer text-primary hover:underline"
+            onClick={(e) => {
+              e.stopPropagation();
+              console.log("Hashtag clicked:", hashtag);
+              onHashtagClick && onHashtagClick(hashtag);
+            }}
+          >
+            #{hashtag}
+          </span>
+          {i < words.length - 1 ? ' ' : ''}
+        </span>
+      );
+    } else {
+      parts.push(
+        <span key={i}>
+          {word}
+          {i < words.length - 1 ? ' ' : ''}
+        </span>
+      );
+    }
+  }
+
+  return <p className="text-gray-800 dark:text-gray-200">{parts}</p>;
 };
 
 const UpdateCard = ({ update, onHashtagClick }: UpdateCardProps) => {
