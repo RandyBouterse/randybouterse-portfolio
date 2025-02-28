@@ -29,7 +29,7 @@ export const updates: Update[] = [
         alt: 'AI Chatbot Interface'
       }
     ],
-    likes: 42,
+    likes: 0,
     comments: 7,
     shares: 3
   },
@@ -38,7 +38,7 @@ export const updates: Update[] = [
     content: "Excited to present my insights on Product-Led Growth strategies at next week's Product Management summit! Will be sharing case studies and tactical approaches. #ProductManagement #Growth",
     date: '2024-06-10T15:45:00',
     time: '3:45 PM',
-    likes: 38,
+    likes: 0,
     comments: 12,
     shares: 5
   },
@@ -64,7 +64,7 @@ export const updates: Update[] = [
         alt: 'Innovation Brainstorming'
       }
     ],
-    likes: 76,
+    likes: 0,
     comments: 15,
     shares: 9
   },
@@ -73,7 +73,7 @@ export const updates: Update[] = [
     content: "Finished analyzing the quarterly user research data for our flagship product. The insights we gained will drive our roadmap for the next two quarters. Customer feedback is gold! #UserResearch #ProductStrategy",
     date: '2024-06-01T09:15:00',
     time: '9:15 AM',
-    likes: 51,
+    likes: 0,
     comments: 8,
     shares: 4
   }

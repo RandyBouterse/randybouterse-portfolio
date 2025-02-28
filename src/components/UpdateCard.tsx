@@ -36,8 +36,12 @@ const UpdateCard = ({ update }: UpdateCardProps) => {
     <div className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-sm border border-gray-200 dark:border-gray-700 mb-4">
       <div className="flex items-start space-x-3 mb-3">
         <div className="flex-shrink-0">
-          <div className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-            <span className="text-sm font-bold">RB</span>
+          <div className="w-10 h-10 rounded-full overflow-hidden">
+            <img 
+              src="/lovable-uploads/8f499ff8-b696-4c8e-98bf-8042bd2cbe0a.png" 
+              alt="Randy Bouterse" 
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
         <div>
