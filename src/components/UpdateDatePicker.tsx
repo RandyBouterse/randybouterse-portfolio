@@ -43,13 +43,10 @@ const UpdateDatePicker = ({ updates, onSelectDate, selectedDate }: UpdateDatePic
     setCurrentMonth(prev => new Date(prev.getFullYear(), prev.getMonth() - 1, 1));
   };
 
-  // Initialize selected date to the most recent update if it exists
+  // Initialize with no selected date by default
   useEffect(() => {
-    if (updateDates.length > 0 && !selectedDate) {
-      const sortedDates = [...updateDates].sort((a, b) => b.getTime() - a.getTime());
-      onSelectDate(sortedDates[0]);
-    }
-  }, [updateDates, onSelectDate, selectedDate]);
+    // No auto-selection behavior
+  }, [updateDates, onSelectDate]);
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-sm border border-gray-200 dark:border-gray-700">
