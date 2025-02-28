@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Heart, Calendar } from "lucide-react";
 import { Media, Update } from "@/data/updates";
@@ -39,6 +38,7 @@ const renderContentWithHashtags = (content: string, onHashtagClick?: (hashtag: s
                 className="cursor-pointer mr-1 inline-flex"
                 onClick={(e) => {
                   e.stopPropagation();
+                  console.log("Badge clicked for hashtag:", hashtag);
                   onHashtagClick(hashtag);
                 }}
               >

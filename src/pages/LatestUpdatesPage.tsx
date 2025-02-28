@@ -1,3 +1,4 @@
+
 import { useState, useMemo, useEffect } from "react";
 import { isSameDay, parseISO } from "date-fns";
 import { Update, updates } from "@/data/updates";
@@ -36,7 +37,7 @@ const LatestUpdatesPage = () => {
   const allHashtags = useMemo(() => getAllHashtags(updates), [updates]);
 
   const filteredUpdates = useMemo(() => {
-    let filtered = updates;
+    let filtered = [...updates]; // Create a copy to avoid mutations
     
     if (selectedDate) {
       filtered = filtered.filter(update => 
@@ -45,9 +46,10 @@ const LatestUpdatesPage = () => {
     }
     
     if (selectedHashtag) {
-      filtered = filtered.filter(update => 
-        extractHashtags(update.content).includes(selectedHashtag)
-      );
+      filtered = filtered.filter(update => {
+        const updateTags = extractHashtags(update.content);
+        return updateTags.includes(selectedHashtag);
+      });
     }
     
     return filtered;
@@ -70,6 +72,7 @@ const LatestUpdatesPage = () => {
   };
 
   const handleHashtagClick = (hashtag: string) => {
+    console.log("Hashtag clicked in LatestUpdatesPage:", hashtag);
     if (selectedHashtag === hashtag) {
       setSelectedHashtag(null);
     } else {
