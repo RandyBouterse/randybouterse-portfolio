@@ -21,12 +21,12 @@ export const updates: Update[] = [
     id: '1',
     content: "Just completed the AIPC course of Product School! It was great discussing strategy, implementation, scaling and how to built and train AI models.  #AI #ProductManagement #TrainingAndCertifications",
     date: '2025-02-28T10:30:00',
-    time: '10:30 AM',
+    time: '22:30',
     media: [
       {
         type: 'image',
-        url: 'https://i.postimg.cc/NMYnWF5g/image.png',
-        alt: 'AI Chatbot Interface'
+        url: 'https://images.ctfassets.net/6nwv0fapso8r/4U97Y0E3Fa0OSwFDn62riF/a746dcb3afadec7c6576212431726f58/AIPC.jpg',
+        alt: 'AI for Product Certification'
       }
     ],
     likes: 0,
