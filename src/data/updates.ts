@@ -17,6 +17,86 @@ export interface Update {
 }
 
 export const updates: Update[] = [
+    {
+    id: '1',
+    content: "Just completed the AIPC course of Product School! It was great discussing strategy, implementation, scaling and how to built and train AI models.  #AI #ProductManagement #TrainingAndCertifications",
+    date: '2025-02-28T10:30:00',
+    time: '10:30 AM',
+    media: [
+      {
+        type: 'image',
+        url: 'https://i.postimg.cc/NMYnWF5g/image.png',
+        alt: 'AI Chatbot Interface'
+      }
+    ],
+    likes: 0,
+    comments: 7,
+    shares: 3
+  },
+    {
+    id: '1',
+    content: "Just completed the first prototype of my new AI-powered portfolio chatbot! It's amazing how it can answer questions about my experience and skills. #AI #ProductManagement",
+    date: '2024-06-15T10:30:00',
+    time: '10:30 AM',
+    media: [
+      {
+        type: 'image',
+        url: 'https://i.postimg.cc/NMYnWF5g/image.png',
+        alt: 'AI Chatbot Interface'
+      }
+    ],
+    likes: 0,
+    comments: 7,
+    shares: 3
+  },
+    {
+    id: '1',
+    content: "Just completed the first prototype of my new AI-powered portfolio chatbot! It's amazing how it can answer questions about my experience and skills. #AI #ProductManagement",
+    date: '2024-06-15T10:30:00',
+    time: '10:30 AM',
+    media: [
+      {
+        type: 'image',
+        url: 'https://i.postimg.cc/NMYnWF5g/image.png',
+        alt: 'AI Chatbot Interface'
+      }
+    ],
+    likes: 0,
+    comments: 7,
+    shares: 3
+  },
+    {
+    id: '1',
+    content: "Just completed the first prototype of my new AI-powered portfolio chatbot! It's amazing how it can answer questions about my experience and skills. #AI #ProductManagement",
+    date: '2024-06-15T10:30:00',
+    time: '10:30 AM',
+    media: [
+      {
+        type: 'image',
+        url: 'https://i.postimg.cc/NMYnWF5g/image.png',
+        alt: 'AI Chatbot Interface'
+      }
+    ],
+    likes: 0,
+    comments: 7,
+    shares: 3
+  },
+   {
+    id: '1',
+    content: "Just completed the first prototype of my new AI-powered portfolio chatbot! It's amazing how it can answer questions about my experience and skills. #AI #ProductManagement",
+    date: '2024-06-15T10:30:00',
+    time: '10:30 AM',
+    media: [
+      {
+        type: 'image',
+        url: 'https://i.postimg.cc/NMYnWF5g/image.png',
+        alt: 'AI Chatbot Interface'
+      }
+    ],
+    likes: 0,
+    comments: 7,
+    shares: 3
+  }, 
   {
     id: '1',
     content: "Just completed the first prototype of my new AI-powered portfolio chatbot! It's amazing how it can answer questions about my experience and skills. #AI #ProductManagement",
