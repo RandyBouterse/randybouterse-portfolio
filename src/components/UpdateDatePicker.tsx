@@ -26,8 +26,13 @@ const UpdateDatePicker = ({ updates, onSelectDate, selectedDate }: UpdateDatePic
     return eachDayOfInterval({ start, end });
   }, [currentMonth]);
 
-  const hasUpdateOnDate = (date: Date) => {
-    return updateDates.some(updateDate => isSameDay(updateDate, date));
+  // Count the number of updates per day (max 3)
+  const getUpdatesCountForDate = (date: Date) => {
+    const count = updateDates.filter(updateDate => 
+      isSameDay(updateDate, date)
+    ).length;
+    
+    return Math.min(count, 3); // Max 3 dots
   };
 
   const nextMonth = () => {
@@ -76,7 +81,8 @@ const UpdateDatePicker = ({ updates, onSelectDate, selectedDate }: UpdateDatePic
       
       <div className="grid grid-cols-7 gap-1">
         {daysInMonth.map((day) => {
-          const hasUpdate = hasUpdateOnDate(day);
+          const updatesCount = getUpdatesCountForDate(day);
+          const hasUpdate = updatesCount > 0;
           const isSelected = selectedDate && isSameDay(day, selectedDate);
           const today = isToday(day);
 
@@ -96,7 +102,14 @@ const UpdateDatePicker = ({ updates, onSelectDate, selectedDate }: UpdateDatePic
             >
               {day.getDate()}
               {hasUpdate && !isSelected && (
-                <span className="absolute bottom-1 w-1 h-1 rounded-full bg-primary"></span>
+                <div className="absolute bottom-1 flex space-x-0.5">
+                  {[...Array(updatesCount)].map((_, i) => (
+                    <span 
+                      key={i} 
+                      className="w-1 h-1 rounded-full bg-primary"
+                    />
+                  ))}
+                </div>
               )}
             </button>
           );

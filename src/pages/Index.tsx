@@ -209,8 +209,6 @@ const Index = () => {
         </div>
       </section>
 
-      <LatestUpdates />
-
       <ExperienceSection />
 
       <SkillsSection />
@@ -289,6 +287,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <LatestUpdates />
 
       <section className="bg-white dark:bg-black text-foreground py-32">
         <div className="container px-4">

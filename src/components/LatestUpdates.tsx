@@ -4,6 +4,8 @@ import { isSameDay, parseISO } from "date-fns";
 import { Update, updates } from "@/data/updates";
 import UpdateCard from "./UpdateCard";
 import UpdateDatePicker from "./UpdateDatePicker";
+import { ArrowUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const LatestUpdates = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
@@ -21,6 +23,17 @@ const LatestUpdates = () => {
 
   const handleSelectDate = (date: Date) => {
     setSelectedDate(date);
+  };
+
+  const handleLatestUpdate = () => {
+    if (updates.length > 0) {
+      // Get the most recent update date
+      const sortedDates = [...updates]
+        .map(update => new Date(update.date))
+        .sort((a, b) => b.getTime() - a.getTime());
+      
+      setSelectedDate(sortedDates[0]);
+    }
   };
 
   return (
@@ -42,7 +55,21 @@ const LatestUpdates = () => {
           </div>
           
           <div className="md:col-span-1">
-            <div className="sticky top-24">
+            <div className="sticky top-24 space-y-4">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Click on the date with dots to see the activities
+                </p>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  onClick={handleLatestUpdate}
+                  className="flex items-center gap-1"
+                >
+                  <ArrowUp className="h-4 w-4" />
+                  Latest
+                </Button>
+              </div>
               <UpdateDatePicker 
                 updates={updates}
                 onSelectDate={handleSelectDate}

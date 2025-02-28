@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Heart, MessageCircle, Share, Calendar } from "lucide-react";
+import { Heart, Calendar } from "lucide-react";
 import { Media, Update } from "@/data/updates";
 import MediaCarousel from "./MediaCarousel";
 import { cn } from "@/lib/utils";
@@ -13,12 +13,23 @@ interface UpdateCardProps {
 const UpdateCard = ({ update }: UpdateCardProps) => {
   const [mediaViewerOpen, setMediaViewerOpen] = useState(false);
   const [initialMediaIndex, setInitialMediaIndex] = useState(0);
+  const [liked, setLiked] = useState(false);
+  const [likesCount, setLikesCount] = useState(update.likes || 0);
   
   const formattedDate = format(new Date(update.date), "MMM d, yyyy");
 
   const handleMediaClick = (index: number) => {
     setInitialMediaIndex(index);
     setMediaViewerOpen(true);
+  };
+
+  const handleLike = () => {
+    if (liked) {
+      setLikesCount(prev => prev - 1);
+    } else {
+      setLikesCount(prev => prev + 1);
+    }
+    setLiked(!liked);
   };
 
   return (
@@ -79,17 +90,15 @@ const UpdateCard = ({ update }: UpdateCardProps) => {
       )}
 
       <div className="flex items-center text-gray-500 dark:text-gray-400 space-x-6 pt-2 border-t border-gray-200 dark:border-gray-700">
-        <button className="flex items-center space-x-1 hover:text-red-500 transition-colors">
-          <Heart className="h-4 w-4" />
-          <span className="text-sm">{update.likes || 0}</span>
-        </button>
-        <button className="flex items-center space-x-1 hover:text-blue-500 transition-colors">
-          <MessageCircle className="h-4 w-4" />
-          <span className="text-sm">{update.comments || 0}</span>
-        </button>
-        <button className="flex items-center space-x-1 hover:text-green-500 transition-colors">
-          <Share className="h-4 w-4" />
-          <span className="text-sm">{update.shares || 0}</span>
+        <button 
+          className={cn(
+            "flex items-center space-x-1 transition-colors",
+            liked ? "text-red-500" : "hover:text-red-500"
+          )}
+          onClick={handleLike}
+        >
+          <Heart className="h-4 w-4" fill={liked ? "currentColor" : "none"} />
+          <span className="text-sm">{likesCount}</span>
         </button>
       </div>
 
