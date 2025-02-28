@@ -5,12 +5,56 @@ import { Media, Update } from "@/data/updates";
 import MediaCarousel from "./MediaCarousel";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
+import { Badge } from "@/components/ui/badge";
 
 interface UpdateCardProps {
   update: Update;
+  onHashtagClick?: (hashtag: string) => void;
 }
 
-const UpdateCard = ({ update }: UpdateCardProps) => {
+// Function to extract hashtags from update content
+const extractHashtags = (content: string): string[] => {
+  const hashtagRegex = /#(\w+)/g;
+  const matches = content.match(hashtagRegex);
+  if (!matches) return [];
+  return matches.map(tag => tag.substring(1)); // Remove the # symbol
+};
+
+// Function to render content with clickable hashtags
+const renderContentWithHashtags = (content: string, onHashtagClick?: (hashtag: string) => void) => {
+  if (!onHashtagClick) {
+    return <p className="text-gray-800 dark:text-gray-200">{content}</p>;
+  }
+
+  const words = content.split(' ');
+  return (
+    <p className="text-gray-800 dark:text-gray-200">
+      {words.map((word, index) => {
+        if (word.startsWith('#')) {
+          const hashtag = word.substring(1);
+          return (
+            <span key={index}>
+              <Badge 
+                variant="secondary"
+                className="cursor-pointer mr-1 inline-flex"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onHashtagClick(hashtag);
+                }}
+              >
+                #{hashtag}
+              </Badge>
+              {' '}
+            </span>
+          );
+        }
+        return <span key={index}>{word} </span>;
+      })}
+    </p>
+  );
+};
+
+const UpdateCard = ({ update, onHashtagClick }: UpdateCardProps) => {
   const [mediaViewerOpen, setMediaViewerOpen] = useState(false);
   const [initialMediaIndex, setInitialMediaIndex] = useState(0);
   const [liked, setLiked] = useState(false);
@@ -53,7 +97,7 @@ const UpdateCard = ({ update }: UpdateCardProps) => {
       </div>
 
       <div className="mb-3">
-        <p className="text-gray-800 dark:text-gray-200">{update.content}</p>
+        {renderContentWithHashtags(update.content, onHashtagClick)}
       </div>
 
       {update.media && update.media.length > 0 && (
