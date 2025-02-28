@@ -1,10 +1,11 @@
+
 import { useState } from "react";
 import { MessageSquare, Sun, Moon, FileDown, Mail, Linkedin, MapPin, Circle, Link } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useTheme } from "next-themes";
 import SkillsSection from "@/components/SkillsSection";
 import ExperienceSection from "@/components/ExperienceSection";
+import LatestUpdates from "@/components/LatestUpdates";
 import { Badge } from "@/components/ui/badge";
 import {
   Tooltip,
@@ -207,6 +208,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <LatestUpdates />
 
       <ExperienceSection />
 
