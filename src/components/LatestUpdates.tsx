@@ -1,7 +1,7 @@
 
 import { useState, useMemo } from "react";
 import { isSameDay, parseISO } from "date-fns";
-import { Update, updates } from "@/data/updates";
+import { updates } from "@/data/updates";
 import UpdateCard from "./UpdateCard";
 import UpdateDatePicker from "./UpdateDatePicker";
 import { ArrowUp } from "lucide-react";
@@ -49,14 +49,14 @@ const LatestUpdates = () => {
               ))
             ) : (
               <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm border border-gray-200 dark:border-gray-700 text-center">
-                <p className="text-gray-500 dark:text-gray-400">No updates found</p>
+                <p className="text-gray-500 dark:text-gray-400">No updates found for this date</p>
                 <div className="mt-2">
                   <Button 
                     variant="outline" 
                     size="sm" 
                     onClick={() => setSelectedDate(undefined)}
                   >
-                    Show all updates
+                    Reset date filter
                   </Button>
                 </div>
               </div>
@@ -85,16 +85,18 @@ const LatestUpdates = () => {
                 selectedDate={selectedDate}
               />
               
-              <div className="mt-4">
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  onClick={() => setSelectedDate(undefined)}
-                  className="w-full"
-                >
-                  Show All Updates
-                </Button>
-              </div>
+              {selectedDate && (
+                <div className="mt-4">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    onClick={() => setSelectedDate(undefined)}
+                    className="w-full"
+                  >
+                    Reset date filter
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
         </div>
