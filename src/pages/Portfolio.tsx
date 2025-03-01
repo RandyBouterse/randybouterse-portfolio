@@ -89,6 +89,7 @@ const Portfolio = () => {
             <a href="/" className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300">Home</a>
             <a href="/about" className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300">About</a>
             <a href="/portfolio" className="text-sm font-medium border-b-2 border-primary">Portfolio</a>
+            <a href="/latest-updates" className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300">Latest Updates</a>
             <Button
               variant="outline"
               size="icon"
