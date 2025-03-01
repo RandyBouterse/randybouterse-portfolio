@@ -32,6 +32,42 @@ const UpdateCard = ({ update }: UpdateCardProps) => {
     setLiked(!liked);
   };
 
+  // Function to format content with proper line breaks for the ProductCon update
+  const formatContent = (content: string) => {
+    // Check if this is the ProductCon update (id: '4')
+    if (update.id === '4') {
+      // Split the content by " - " to identify the presentation lines
+      const parts = content.split(' - ');
+      
+      if (parts.length > 1) {
+        // Format the first part (intro text)
+        const intro = parts[0];
+        
+        // Rejoin the rest with proper formatting
+        const formattedLines = parts.slice(1).map((part, index) => {
+          // Skip the first part as it's the intro
+          if (index === 0) return null;
+          return `- ${part}`;
+        }).filter(Boolean);
+        
+        // Return formatted JSX with line breaks
+        return (
+          <>
+            <p>{intro}</p>
+            <ul className="list-disc pl-5 mt-2 space-y-1">
+              {formattedLines.map((line, index) => (
+                <li key={index} className="text-gray-800 dark:text-gray-200">{line}</li>
+              ))}
+            </ul>
+          </>
+        );
+      }
+    }
+    
+    // For all other updates, return the content as is
+    return <p className="text-gray-800 dark:text-gray-200">{content}</p>;
+  };
+
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-sm border border-gray-200 dark:border-gray-700 mb-4">
       <div className="flex items-start space-x-3 mb-3">
@@ -57,7 +93,7 @@ const UpdateCard = ({ update }: UpdateCardProps) => {
       </div>
 
       <div className="mb-3">
-        <p className="text-gray-800 dark:text-gray-200">{update.content}</p>
+        {formatContent(update.content)}
       </div>
 
       {update.media && update.media.length > 0 && (
