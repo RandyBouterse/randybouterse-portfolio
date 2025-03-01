@@ -43,7 +43,7 @@ export const updates: Update[] = [
         type: 'image',
         url: 'https://i.ibb.co/21zbMTcH/image.png',
         alt: 'Notion Portfolio'
-      }
+      },
       {
         type: 'image',
         url: 'https://i.postimg.cc/65Rm5Cn9/image.png',
@@ -72,16 +72,7 @@ export const updates: Update[] = [
   },
     {
     id: '4',
-    content: "Visited ProductCon in London. Great talks of Product Leaders with topics such as:",
-              "- Augmenting Your Product’s Value Proposition with AI - by Debbie McMahon, CPO at Financial Times"
-              "- The Future of Product in 2025 - by Carlos González De Villaumbrosia, Founder & CEO at Product School"
-              "- Product Localization Playbooks for International Expansion - by Vinay Ramani, CPO at Tide (Ex-Meta, Google, Uber)"
-              "- Product & Culture Integration After M&A - by Pénélope Carlier, VP of Product at TIER Dott"
-              "- Dismantling SAFe, Safely: Breaking Bureaucracy to Unlock True Agility - by Simone Paul Tamussin, CPO at Mastercard Gateway"
-              "- Scaling & Monetizing Marketplaces - by Carlos González De Villaumbrosia & Tanya Cordrey, CPO at Motorway"
-              "- Practical AI Use Cases for Product Leaders to 10x Impact Today - by Dave Killeen, VP of Product at Pendo"
-              "- Don’t Leave Money on the Table: Optimizing Payments to Reduce Churn - by Chetan Pandya, SVP of Product at DAZN"
-              "#ProductManagement #Conference #Community",
+    content: "Visited ProductCon in London. Great talks of Product Leaders with topics such as: - Augmenting Your Product's Value Proposition with AI - by Debbie McMahon, CPO at Financial Times - The Future of Product in 2025 - by Carlos González De Villaumbrosia, Founder & CEO at Product School - Product Localization Playbooks for International Expansion - by Vinay Ramani, CPO at Tide (Ex-Meta, Google, Uber) - Product & Culture Integration After M&A - by Pénélope Carlier, VP of Product at TIER Dott - Dismantling SAFe, Safely: Breaking Bureaucracy to Unlock True Agility - by Simone Paul Tamussin, CPO at Mastercard Gateway - Scaling & Monetizing Marketplaces - by Carlos González De Villaumbrosia & Tanya Cordrey, CPO at Motorway - Practical AI Use Cases for Product Leaders to 10x Impact Today - by Dave Killeen, VP of Product at Pendo - Don't Leave Money on the Table: Optimizing Payments to Reduce Churn - by Chetan Pandya, SVP of Product at DAZN #ProductManagement #Conference #Community",
     date: '2025-02-19T10:30:00',
     time: '10:30 AM',
     media: [
@@ -89,15 +80,15 @@ export const updates: Update[] = [
         type: 'image',
         url: 'https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5ed2d015-9520-4de5-89c7-23905f164541_1600x1066.jpeg',
         alt: 'ProductCon1'
-      }
+      },
       {
         type: 'image',
         url: 'https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F846c99ee-2fb9-4ab7-947f-3605d8a4ba10_1600x1066.jpeg',
         alt: 'ProductCon2'
-      }
+      },
       {
         type: 'image',
-        url: 'https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steephttps%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F339bfed3-6c82-4b35-aeb3-264ce1e14ad4_1600x1066.jpeg',
+        url: 'https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F339bfed3-6c82-4b35-aeb3-264ce1e14ad4_1600x1066.jpeg',
         alt: 'ProductCon3'
       }
     ],
@@ -142,7 +133,7 @@ export const updates: Update[] = [
     content: "I just got certified as a Professional Scrum Product Owner (PSPO I)!",
     date: '2024-06-10T15:45:00',
     time: '3:45 PM',
-          media: [
+    media: [
       {
         type: 'image',
         url: 'https://xebia.com/academy/wp-content/uploads/sites/4/2023/07/pspo-I-certificate.png',
