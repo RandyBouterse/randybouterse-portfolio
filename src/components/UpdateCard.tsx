@@ -32,33 +32,38 @@ const UpdateCard = ({ update }: UpdateCardProps) => {
     setLiked(!liked);
   };
 
-  // Function to format content with proper line breaks for the ProductCon update
+  // Function to format content with proper bullet points for the ProductCon update
   const formatContent = (content: string) => {
     // Check if this is the ProductCon update (id: '4')
     if (update.id === '4') {
-      // Split the content by " - " to identify the presentation lines
-      const parts = content.split(' - ');
-      
-      if (parts.length > 1) {
-        // Format the first part (intro text)
-        const intro = parts[0];
+      // For ProductCon update, format with bullet points
+      if (content.includes("Visited ProductCon in London")) {
+        // Extract the intro text (before the presentation list)
+        const introText = content.split("Augmenting")[0].trim();
         
-        // Rejoin the rest with proper formatting
-        const formattedLines = parts.slice(1).map((part, index) => {
-          // Skip the first part as it's the intro
-          if (index === 0) return null;
-          return `- ${part}`;
-        }).filter(Boolean);
+        // Extract all the presentations from the content
+        const presentations = [
+          "Augmenting Your Product's Value Proposition with AI by Debbie McMahon, CPO at Financial Times",
+          "The Future of Product in 2025 by Carlos González De Villaumbrosia, Founder & CEO at Product School",
+          "Product Localization Playbooks for International Expansion by Vinay Ramani, CPO at Tide (Ex-Meta, Google, Uber)",
+          "Product & Culture Integration After M&A by Pénélope Carlier, VP of Product at TIER Dott",
+          "Dismantling SAFe, Safely: Breaking Bureaucracy to Unlock True Agility by Simone Paul Tamussin, CPO at Mastercard Gateway",
+          "Scaling & Monetizing Marketplaces by Carlos González De Villaumbrosia & Tanya Cordrey, CPO at Motorway",
+          "Practical AI Use Cases for Product Leaders to 10x Impact Today by Dave Killeen, VP of Product at Pendo",
+          "Don't Leave Money on the Table: Optimizing Payments to Reduce Churn by Chetan Pandya, SVP of Product at DAZN"
+        ];
         
-        // Return formatted JSX with line breaks
+        // Return formatted JSX with bullet points
         return (
           <>
-            <p>{intro}</p>
-            <ul className="list-disc pl-5 mt-2 space-y-1">
-              {formattedLines.map((line, index) => (
-                <li key={index} className="text-gray-800 dark:text-gray-200">{line}</li>
+            <p className="mb-2">{introText}</p>
+            <p className="mb-1">Great talks of Product Leaders with topics such as:</p>
+            <ul className="list-disc pl-5 space-y-1 mb-2">
+              {presentations.map((presentation, index) => (
+                <li key={index} className="text-gray-800 dark:text-gray-200">{presentation}</li>
               ))}
             </ul>
+            <p className="text-gray-800 dark:text-gray-200 mt-2">#ProductManagement #Conference #Community</p>
           </>
         );
       }
