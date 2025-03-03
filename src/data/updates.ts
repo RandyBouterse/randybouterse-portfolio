@@ -19,8 +19,8 @@ export interface Update {
 export const updates: Update[] = [
     {
     id: '1',
-    content: "Just finished the AIPC course of Product School! It was great discussing strategy, implementation, scaling and how to built and train AI models. And a shoutout to Yana Yushkina as the instructor!  #AI #ProductManagement #TrainingAndCertifications",
-    date: '2025-02-28T10:30:00',
+    content: "Just got my AIPC certificate from Product School! It was great discussing strategy, implementation, scaling and how to built and train AI models. And a shoutout to Yana Yushkina as the instructor!  #AI #ProductManagement #TrainingAndCertifications",
+    date: '2025-03-02T10:30:00',
     time: '22:30',
     media: [
       {
