@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { MessageSquare, Sun, Moon, FileDown, Mail, Linkedin, MapPin, Circle, Link } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -171,35 +172,35 @@ const Index = () => {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-4">
-            <div className="bg-white rounded-lg p-2 shadow-sm hover:scale-125 transition-transform duration-200 cursor-pointer">
+            <div className="bg-white rounded-lg p-2 shadow-sm hover:scale-150 transition-transform duration-300 cursor-pointer">
               <img 
                 src="/lovable-uploads/69f58347-708b-45d2-886e-40922d514c0e.png"
                 alt="Product Manager Certification"
                 className="h-16 w-auto"
               />
             </div>
-            <div className="bg-white rounded-lg p-2 shadow-sm hover:scale-125 transition-transform duration-200 cursor-pointer">
+            <div className="bg-white rounded-lg p-2 shadow-sm hover:scale-150 transition-transform duration-300 cursor-pointer">
               <img 
                 src="/lovable-uploads/67d4b806-28b9-4b64-8a51-908520602013.png"
                 alt="PSPO Certification"
                 className="h-16 w-auto"
               />
             </div>
-            <div className="bg-white rounded-lg p-2 shadow-sm hover:scale-125 transition-transform duration-200 cursor-pointer">
+            <div className="bg-white rounded-lg p-2 shadow-sm hover:scale-150 transition-transform duration-300 cursor-pointer">
               <img 
                 src="/lovable-uploads/abe4214a-16c5-4321-8cf7-ffed7dfa3840.png"
                 alt="POPM Certification"
                 className="h-16 w-auto"
               />
             </div>
-            <div className="bg-white rounded-lg p-2 shadow-sm hover:scale-125 transition-transform duration-200 cursor-pointer">
+            <div className="bg-white rounded-lg p-2 shadow-sm hover:scale-150 transition-transform duration-300 cursor-pointer">
               <img 
                 src="/lovable-uploads/eaa326ef-94ff-4b8e-a8a3-f2e1f803f372.png"
                 alt="AI Product Certification"
                 className="h-16 w-auto"
               />
             </div>
-            <div className="bg-white rounded-lg p-2 shadow-sm hover:scale-125 transition-transform duration-200 cursor-pointer">
+            <div className="bg-white rounded-lg p-2 shadow-sm hover:scale-150 transition-transform duration-300 cursor-pointer">
               <img 
                 src="/lovable-uploads/4ea9864f-fc55-41bf-a4da-7abc425ce249.png"
                 alt="AI for Product Management Course"
