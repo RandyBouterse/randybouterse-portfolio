@@ -199,6 +199,13 @@ const Index = () => {
                 className="h-16 w-auto"
               />
             </div>
+            <div className="bg-white rounded-lg p-2 shadow-sm hover:scale-125 transition-transform duration-200 cursor-pointer">
+              <img 
+                src="/lovable-uploads/4ea9864f-fc55-41bf-a4da-7abc425ce249.png"
+                alt="AI for Product Management Course"
+                className="h-16 w-auto"
+              />
+            </div>
           </div>
         </div>
       </section>
