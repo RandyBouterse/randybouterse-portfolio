@@ -1,3 +1,4 @@
+
 export interface Media {
   type: 'image' | 'video';
   url: string;
@@ -24,12 +25,12 @@ export const updates: Update[] = [
     media: [
       {
         type: 'image',
-        url: '/lovable-uploads/63944b33-8bff-49ac-951b-6306bfa6c9fa.png',
+        url: 'https://i.ibb.co/s9NgzmgR/thumbnail-IMG-0858.png',
         alt: 'Portfolio mobile light mode'
       },
       {
         type: 'image',
-        url: '/lovable-uploads/5e1c9dff-f25e-4648-a2c4-d02e176fa0dd.png',
+        url: 'https://i.ibb.co/LdRhS2v5/thumbnail-IMG-0857.png',
         alt: 'Portfolio mobile dark mode'
       }
     ],
