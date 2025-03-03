@@ -17,6 +17,9 @@ export default {
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
       },
+      scale: {
+        '180': '1.8',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
