@@ -1,5 +1,7 @@
 
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { 
   Users, 
   Activity, 
@@ -80,31 +82,48 @@ const skillsData: Skill[] = [
   }
 ];
 
+const SkillCard = ({ skill }: { skill: Skill }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+    <Card className="animate-fade-up">
+      <CardContent className="p-4">
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex items-center justify-between w-full text-left"
+        >
+          <div className="flex items-center gap-2">
+            {skill.icon}
+            <h3 className="text-base md:text-xl font-semibold">{skill.title}</h3>
+          </div>
+          {isOpen ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
+        </button>
+        
+        {isOpen && (
+          <ul className="space-y-1 mt-3 animate-fade-in pl-2">
+            {skill.items.map((item, index) => (
+              <li key={index} className="text-gray-600 dark:text-gray-400 text-sm flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
+      </CardContent>
+    </Card>
+  );
+};
+
 const SkillsSection = () => {
   return (
-    <section className="py-32 bg-white dark:bg-black">
+    <section className="py-12 md:py-20 bg-white dark:bg-black">
       <div className="container px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
           Skills & Toolkit
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {skillsData.map((skill) => (
-            <Card key={skill.title} className="animate-fade-up">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  {skill.icon}
-                  <h3 className="text-xl font-semibold">{skill.title}</h3>
-                </div>
-                <ul className="space-y-2">
-                  {skill.items.map((item, index) => (
-                    <li key={index} className="text-gray-600 dark:text-gray-400 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+            <SkillCard key={skill.title} skill={skill} />
           ))}
         </div>
       </div>

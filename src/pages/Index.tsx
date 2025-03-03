@@ -1,5 +1,6 @@
+
 import { useState } from "react";
-import { MessageSquare, Sun, Moon, FileDown, Mail, Linkedin, MapPin, Circle, Link } from "lucide-react";
+import { MessageSquare, Sun, Moon, FileDown, Mail, Linkedin, MapPin, Circle, Link, Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 import SkillsSection from "@/components/SkillsSection";
@@ -13,10 +14,13 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Card, CardContent } from "@/components/ui/card";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Index = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const isMobile = useIsMobile();
 
   const handleChatOpen = () => {
     if (window.voiceflow?.chat) {
@@ -70,27 +74,57 @@ const Index = () => {
               </span>
             </div>
           </div>
-          <div className="flex items-center gap-8">
-            <a href="/" className="text-sm font-medium border-b-2 border-primary">Home</a>
-            <a href="/about" className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300">About</a>
-            <a href="/portfolio" className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300">Portfolio</a>
-            <a href="/latest-updates" className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300">Latest Updates</a>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            >
-              <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-black dark:text-white" />
-              <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-black dark:text-white" />
-              <span className="sr-only">Toggle theme</span>
-            </Button>
-          </div>
+          
+          {isMobile ? (
+            <div className="flex items-center gap-4">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              >
+                <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-black dark:text-white" />
+                <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-black dark:text-white" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+              <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </Button>
+            </div>
+          ) : (
+            <div className="flex items-center gap-8">
+              <a href="/" className="text-sm font-medium border-b-2 border-primary">Home</a>
+              <a href="/about" className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300">About</a>
+              <a href="/portfolio" className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300">Portfolio</a>
+              <a href="/latest-updates" className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300">Latest Updates</a>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              >
+                <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-black dark:text-white" />
+                <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-black dark:text-white" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+            </div>
+          )}
         </div>
+        
+        {/* Mobile menu */}
+        {isMobile && mobileMenuOpen && (
+          <div className="absolute w-full bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 animate-fade-in">
+            <div className="flex flex-col px-4 py-4 space-y-4">
+              <a href="/" className="text-sm font-medium py-2 border-b-2 border-primary">Home</a>
+              <a href="/about" className="text-sm font-medium py-2 hover:text-gray-600 dark:hover:text-gray-300">About</a>
+              <a href="/portfolio" className="text-sm font-medium py-2 hover:text-gray-600 dark:hover:text-gray-300">Portfolio</a>
+              <a href="/latest-updates" className="text-sm font-medium py-2 hover:text-gray-600 dark:hover:text-gray-300">Latest Updates</a>
+            </div>
+          </div>
+        )}
       </nav>
 
-      <section className="container px-4 pt-32 pb-32 min-h-screen flex flex-col justify-center relative">
-        <div className="max-w-3xl animate-fade-up">
-          <div className="flex items-center gap-2 mb-6 text-gray-600 dark:text-gray-400">
+      <section className="container px-4 pt-32 pb-16 md:pb-32 min-h-screen flex flex-col justify-center relative text-center md:text-left">
+        <div className="max-w-3xl mx-auto animate-fade-up">
+          <div className="flex items-center gap-2 mb-6 text-gray-600 dark:text-gray-400 justify-center md:justify-start">
             <MapPin className="w-5 h-5" />
             <span>Based in the Netherlands</span>
           </div>
@@ -104,7 +138,7 @@ const Index = () => {
             The future is AI-driven, and I'm embracing it head-on. I'm actively exploring integrating AI into general use and product development.<br />
             <em>Pushing boundaries, solving problems, and making tech work smarter.</em>
           </p>
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4 justify-center md:justify-start">
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -136,7 +170,7 @@ const Index = () => {
                 </TooltipContent>
               </Tooltip>
 
-              <div className="flex gap-4 ml-auto">
+              <div className="flex gap-4 mx-auto md:ml-auto md:mr-0 mt-4 md:mt-0">
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <a 
@@ -170,7 +204,7 @@ const Index = () => {
             </TooltipProvider>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
             <div className="bg-white rounded-lg p-2 shadow-sm hover:scale-180 transition-transform duration-300 cursor-pointer">
               <img 
                 src="/lovable-uploads/69f58347-708b-45d2-886e-40922d514c0e.png"
@@ -210,17 +244,19 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Modified Experience Section (will be handled by the updated component) */}
       <ExperienceSection />
 
+      {/* Modified Skills Section (will be handled by the updated component) */}
       <SkillsSection />
 
-      <section className="py-32 bg-white dark:bg-black">
+      <section className="py-16 md:py-24 bg-white dark:bg-black">
         <div className="container px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {projects.slice(0, 6).map((project, index) => (
-              <a href={`/portfolio/${project.id}`} key={index}>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Projects</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
+            {projects.slice(0, 3).map((project, index) => (
+              <a href={`/portfolio/${project.id}`} key={index} className="col-span-1">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full">
                   <div className="aspect-video relative overflow-hidden">
                     <img 
                       src={project.images[0]} 
@@ -228,73 +264,62 @@ const Index = () => {
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                     />
                   </div>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, i) => (
-                        <Badge key={i} variant="secondary">{tech}</Badge>
+                  <CardContent className="p-4">
+                    <h3 className="text-sm md:text-lg font-semibold mb-1 md:mb-2 line-clamp-1">{project.title}</h3>
+                    <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mb-2 line-clamp-2">{project.description}</p>
+                    <div className="flex flex-wrap gap-1">
+                      {project.tech.slice(0, 2).map((tech, i) => (
+                        <Badge key={i} variant="secondary" className="text-xs">{tech}</Badge>
                       ))}
+                      {project.tech.length > 2 && <Badge variant="secondary" className="text-xs">+{project.tech.length - 2}</Badge>}
                     </div>
                   </CardContent>
                 </Card>
               </a>
             ))}
-          </div>
-          <div className="flex justify-center mt-12">
-            <a href="/portfolio">
-              <Button variant="outline" size="lg" className="gap-2">
-                View all projects
-                <Link className="w-4 h-4" />
-              </Button>
+            <a href="/portfolio" className="col-span-1">
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col justify-center items-center p-6">
+                <Button variant="outline" size="sm" className="gap-2">
+                  View all
+                  <Link className="w-4 h-4" />
+                </Button>
+              </Card>
             </a>
           </div>
         </div>
       </section>
 
-      <section className="py-32 bg-white dark:bg-black">
+      <section className="py-16 md:py-24 bg-white dark:bg-black">
         <div className="container px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
             A bit of awesomeness
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2">Bob the Builder</h3>
-                <h4 className="text-lg text-gray-600 dark:text-gray-400 mb-4">DIY Addict (Digital & Physical)</h4>
-                <p className="text-gray-700 dark:text-gray-300">
-                  I can't help myself - I love building stuff! Not just digital products, but actual hands-on projects too. You'll find me down the YouTube rabbit hole researching techniques one day and covered in sawdust (or debugging code) the next. The best part? Standing back with a cold drink, admiring what I've made, and soaking up those "wow, you made that?" comments from friends.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2">Forrest Gump</h3>
-                <h4 className="text-lg text-gray-600 dark:text-gray-400 mb-4">Accidental Marathon Runner</h4>
-                <p className="text-gray-700 dark:text-gray-300">
-                  "Hey, want to join a Mud Masters obstacle run?" my colleague asked. Somehow that turned into "I'm running a full marathon in 2025!" Classic me - always taking things too far. Now I'm chasing PR's, talking about "splits" at parties, and wondering what I've gotten myself into. But hey, if Forrest can run across America, I can handle 42.195 kilometers... right?
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2">Creator of Minions</h3>
-                <h4 className="text-lg text-gray-600 dark:text-gray-400 mb-4">Professional Cheerleader & Growth Guru</h4>
-                <p className="text-gray-700 dark:text-gray-300">
-                  No, I haven't created tiny yellow pill-shaped creatures (though that would look great on a resume). Instead, I've mentored colleagues who've gone on to do awesome things. There's something magical about grabbing coffee with someone, listening to their dreams, and helping them plot their next move. Consider me your career DJ - mixing tracks that amplify your talents and get you moving toward your goals.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <AwesomenessCard 
+              title="Bob the Builder" 
+              subtitle="DIY Addict (Digital & Physical)" 
+              content="I can't help myself - I love building stuff! Not just digital products, but actual hands-on projects too. You'll find me down the YouTube rabbit hole researching techniques one day and covered in sawdust (or debugging code) the next. The best part? Standing back with a cold drink, admiring what I've made, and soaking up those 'wow, you made that?' comments from friends."
+            />
+            <AwesomenessCard 
+              title="Forrest Gump" 
+              subtitle="Accidental Marathon Runner" 
+              content="'Hey, want to join a Mud Masters obstacle run?' my colleague asked. Somehow that turned into 'I'm running a full marathon in 2025!' Classic me - always taking things too far. Now I'm chasing PR's, talking about 'splits' at parties, and wondering what I've gotten myself into. But hey, if Forrest can run across America, I can handle 42.195 kilometers... right?"
+            />
+            <AwesomenessCard 
+              title="Creator of Minions" 
+              subtitle="Professional Cheerleader & Growth Guru" 
+              content="No, I haven't created tiny yellow pill-shaped creatures (though that would look great on a resume). Instead, I've mentored colleagues who've gone on to do awesome things. There's something magical about grabbing coffee with someone, listening to their dreams, and helping them plot their next move. Consider me your career DJ - mixing tracks that amplify your talents and get you moving toward your goals."
+            />
           </div>
         </div>
       </section>
 
       <LatestUpdates />
 
-      <section className="bg-white dark:bg-black text-foreground py-32">
+      <section className="bg-white dark:bg-black text-foreground py-16 md:py-24">
         <div className="container px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Let's work together</h2>
-          <p className="text-lg text-center text-gray-400 mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Let's work together</h2>
+          <p className="text-lg text-center text-gray-400 mb-6">
             Feel free to reach out for collaborations or just a friendly hello
           </p>
           <div className="flex justify-center">
@@ -307,6 +332,34 @@ const Index = () => {
         </div>
       </section>
     </div>
+  );
+};
+
+// New collapsible card component for "A bit of awesomeness" section
+const AwesomenessCard = ({ title, subtitle, content }: { title: string; subtitle: string; content: string }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+    <Card className="animate-fade-up">
+      <CardContent className="p-4 md:p-6">
+        <button 
+          onClick={() => setIsOpen(!isOpen)} 
+          className="flex items-center justify-between w-full text-left"
+        >
+          <div>
+            <h3 className="text-lg md:text-xl font-bold">{title}</h3>
+            <h4 className="text-sm md:text-base text-gray-600 dark:text-gray-400">{subtitle}</h4>
+          </div>
+          {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+        </button>
+        
+        {isOpen && (
+          <div className="mt-4 text-gray-700 dark:text-gray-300 animate-fade-in">
+            <p>{content}</p>
+          </div>
+        )}
+      </CardContent>
+    </Card>
   );
 };
 

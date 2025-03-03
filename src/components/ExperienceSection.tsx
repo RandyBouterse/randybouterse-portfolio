@@ -1,7 +1,8 @@
-
+import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface WorkExperience {
   company: string;
@@ -94,69 +95,95 @@ const educationData: Education[] = [
   }
 ];
 
+interface ExperienceCardProps {
+  logo: string;
+  title: string;
+  subtitle: string;
+  period: string;
+  description?: string[];
+}
+
+const ExperienceCard = ({ logo, title, subtitle, period, description }: ExperienceCardProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const isMobile = useIsMobile();
+  
+  const shouldShowDescription = !isMobile || isOpen;
+  
+  return (
+    <Card className="mb-4">
+      <CardContent className="p-4">
+        <div className="flex items-start gap-3">
+          <div className="flex-shrink-0">
+            <div className="w-10 h-10 md:w-16 md:h-16 rounded-full overflow-hidden bg-white">
+              <img 
+                src={logo} 
+                alt={title}
+                className="w-full h-full object-cover p-0"
+              />
+            </div>
+          </div>
+          <div className="flex-grow">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-base md:text-xl font-semibold line-clamp-1">{title}</h3>
+                <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 line-clamp-1">{subtitle}</p>
+                <p className="text-xs md:text-sm text-gray-500">{period}</p>
+              </div>
+              {isMobile && description && description.length > 0 && (
+                <button onClick={() => setIsOpen(!isOpen)} className="ml-2 flex-shrink-0">
+                  {isOpen ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
+                </button>
+              )}
+            </div>
+            
+            {shouldShowDescription && description && description.length > 0 && (
+              <ul className="list-disc pl-4 space-y-1 mt-2 text-sm md:text-base">
+                {description.map((desc, i) => (
+                  <li key={i} className="text-gray-700 dark:text-gray-300">{desc}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
+
 const ExperienceSection = () => {
   return (
-    <section className="py-20 bg-white dark:bg-black">
+    <section className="py-12 md:py-20 bg-white dark:bg-black">
       <div className="container px-4">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Experience</h2>
         <Tabs defaultValue="work" className="max-w-4xl mx-auto">
-          <TabsList className="grid w-full grid-cols-2 mb-8">
+          <TabsList className="grid w-full grid-cols-2 mb-6">
             <TabsTrigger value="work">Work</TabsTrigger>
             <TabsTrigger value="education">Education/Certifications</TabsTrigger>
           </TabsList>
           <TabsContent value="work">
-            <div className="space-y-6">
+            <div>
               {workExperiences.map((exp, index) => (
-                <Card key={index}>
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0">
-                        <div className="w-16 h-16 rounded-full overflow-hidden bg-white">
-                          <img 
-                            src={exp.logo} 
-                            alt={exp.company}
-                            className="w-full h-full object-cover p-0"
-                          />
-                        </div>
-                      </div>
-                      <div className="flex-grow">
-                        <h3 className="text-xl font-semibold">{exp.company}</h3>
-                        <p className="text-gray-600 dark:text-gray-400">{exp.role}</p>
-                        <p className="text-sm text-gray-500">{exp.period}</p>
-                        <ul className="list-disc pl-6 space-y-2 mt-4">
-                          {exp.description.map((desc, i) => (
-                            <li key={i} className="text-gray-700 dark:text-gray-300">{desc}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                <ExperienceCard
+                  key={index}
+                  logo={exp.logo}
+                  title={exp.company}
+                  subtitle={exp.role}
+                  period={exp.period}
+                  description={exp.description}
+                />
               ))}
             </div>
           </TabsContent>
           <TabsContent value="education">
-            <div className="space-y-6">
+            <div>
               {educationData.map((edu, index) => (
-                <Card key={index}>
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0">
-                        <div className="w-16 h-16 rounded-full overflow-hidden bg-white">
-                          <img 
-                            src={edu.logo} 
-                            alt={edu.institution}
-                            className="w-full h-full object-cover p-0"
-                          />
-                        </div>
-                      </div>
-                      <div className="flex-grow">
-                        <h3 className="text-xl font-semibold">{edu.institution}</h3>
-                        <p className="text-gray-600 dark:text-gray-400">{edu.degree}</p>
-                        <p className="text-sm text-gray-500">{edu.period}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                <ExperienceCard
+                  key={index}
+                  logo={edu.logo}
+                  title={edu.institution}
+                  subtitle={edu.degree}
+                  period={edu.period}
+                />
               ))}
             </div>
           </TabsContent>
@@ -167,4 +194,3 @@ const ExperienceSection = () => {
 };
 
 export default ExperienceSection;
-
