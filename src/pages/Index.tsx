@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { MessageSquare, Sun, Moon, FileDown, Mail, Linkedin, MapPin, Circle, Link } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -193,18 +192,12 @@ const Index = () => {
                 className="h-16 w-auto"
               />
             </div>
-            <div className="bg-white rounded-lg p-2 shadow-sm hover:scale-125 transition-transform duration-200 cursor-pointer relative">
+            <div className="bg-white rounded-lg p-2 shadow-sm hover:scale-125 transition-transform duration-200 cursor-pointer">
               <img 
                 src="/lovable-uploads/eaa326ef-94ff-4b8e-a8a3-f2e1f803f372.png"
                 alt="AI Product Certification"
-                className="h-16 w-auto opacity-50"
+                className="h-16 w-auto"
               />
-              <Badge 
-                variant="secondary" 
-                className="absolute -bottom-2 left-1/2 -translate-x-1/2"
-              >
-                Coming Soon
-              </Badge>
             </div>
           </div>
         </div>
