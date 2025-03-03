@@ -1,3 +1,4 @@
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -49,6 +50,13 @@ const workExperiences: WorkExperience[] = [
 ];
 
 const educationData: Education[] = [
+  {
+    institution: "Product School",
+    degree: "Artificial Intelligence for Product Certification (AIPC)",
+    period: "2025",
+    achievements: [],
+    logo: "/lovable-uploads/adb4d086-126e-4a27-9dee-fd7cebca2d3f.png"
+  },
   {
     institution: "Product School",
     degree: "Product Manager Certification (PMC)",
@@ -159,3 +167,4 @@ const ExperienceSection = () => {
 };
 
 export default ExperienceSection;
+
