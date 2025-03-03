@@ -10,6 +10,7 @@ import {
   Smartphone,
   Bot
 } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface Skill {
   title: string;
@@ -115,13 +116,15 @@ const SkillCard = ({ skill }: { skill: Skill }) => {
 };
 
 const SkillsSection = () => {
+  const isMobile = useIsMobile();
+  
   return (
-    <section className="py-12 md:py-20 bg-white dark:bg-black">
+    <section className="py-8 md:py-16 bg-white dark:bg-black">
       <div className="container px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
           Skills & Toolkit
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+        <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-2 md:grid-cols-3'} gap-4 max-w-6xl mx-auto`}>
           {skillsData.map((skill) => (
             <SkillCard key={skill.title} skill={skill} />
           ))}

@@ -1,14 +1,18 @@
 
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Circle, Sun, Moon } from "lucide-react";
+import { Circle, Sun, Moon, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useNavigate } from "react-router-dom";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Portfolio = () => {
   const { theme, setTheme } = useTheme();
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const projects = [
     {
@@ -85,38 +89,68 @@ const Portfolio = () => {
               </span>
             </div>
           </div>
-          <div className="flex items-center gap-8">
-            <a href="/" className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300">Home</a>
-            <a href="/about" className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300">About</a>
-            <a href="/portfolio" className="text-sm font-medium border-b-2 border-primary">Portfolio</a>
-            <a href="/latest-updates" className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300">Latest Updates</a>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            >
-              <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-black dark:text-white" />
-              <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-black dark:text-white" />
-              <span className="sr-only">Toggle theme</span>
-            </Button>
-          </div>
+          
+          {isMobile ? (
+            <div className="flex items-center gap-4">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              >
+                <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-black dark:text-white" />
+                <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-black dark:text-white" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+              <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </Button>
+            </div>
+          ) : (
+            <div className="flex items-center gap-8">
+              <a href="/" className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300">Home</a>
+              <a href="/about" className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300">About</a>
+              <a href="/portfolio" className="text-sm font-medium border-b-2 border-primary">Portfolio</a>
+              <a href="/latest-updates" className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300">Latest Updates</a>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              >
+                <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-black dark:text-white" />
+                <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-black dark:text-white" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+            </div>
+          )}
         </div>
+        
+        {/* Mobile menu */}
+        {isMobile && mobileMenuOpen && (
+          <div className="absolute w-full bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 animate-fade-in">
+            <div className="flex flex-col px-4 py-4 space-y-4">
+              <a href="/" className="text-sm font-medium py-2 hover:text-gray-600 dark:hover:text-gray-300">Home</a>
+              <a href="/about" className="text-sm font-medium py-2 hover:text-gray-600 dark:hover:text-gray-300">About</a>
+              <a href="/portfolio" className="text-sm font-medium py-2 border-b-2 border-primary">Portfolio</a>
+              <a href="/latest-updates" className="text-sm font-medium py-2 hover:text-gray-600 dark:hover:text-gray-300">Latest Updates</a>
+            </div>
+          </div>
+        )}
       </nav>
 
       <div className="container px-4 pt-32">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8">Portfolio</h1>
+          <h1 className="text-4xl font-bold mb-8 text-center md:text-left">Portfolio</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <Card key={project.id}>
-                <CardContent>
+                <CardContent className="p-4">
                   <img
                     src={project.images[0]}
                     alt={project.title}
                     className="rounded-lg w-full mb-4"
                   />
-                  <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">
+                  <h2 className="text-xl font-bold mb-2">{project.title}</h2>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
