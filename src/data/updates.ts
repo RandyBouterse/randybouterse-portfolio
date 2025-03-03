@@ -1,4 +1,3 @@
-
 export interface Media {
   type: 'image' | 'video';
   url: string;
@@ -17,6 +16,27 @@ export interface Update {
 }
 
 export const updates: Update[] = [
+  {
+    id: '0',
+    content: "Optimized the mobile experience of this site. @Portfolio #AIDevelopment",
+    date: '2025-03-03T22:36:00',
+    time: '22:36',
+    media: [
+      {
+        type: 'image',
+        url: '/lovable-uploads/63944b33-8bff-49ac-951b-6306bfa6c9fa.png',
+        alt: 'Portfolio mobile light mode'
+      },
+      {
+        type: 'image',
+        url: '/lovable-uploads/5e1c9dff-f25e-4648-a2c4-d02e176fa0dd.png',
+        alt: 'Portfolio mobile dark mode'
+      }
+    ],
+    likes: 0,
+    comments: 2,
+    shares: 0
+  },
     {
     id: '1',
     content: "Just got my AIPC certificate from Product School! It was great discussing strategy, implementation, scaling and how to built and train AI models. And a shoutout to Yana Yushkina as the instructor!  #AI #ProductManagement #TrainingAndCertifications",
