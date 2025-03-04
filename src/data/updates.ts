@@ -18,6 +18,22 @@ export interface Update {
 
 export const updates: Update[] = [
   {
+    id: '-1',
+    content: "Great news! I've been selected for the Perplexity 2025 Business Fellowship program, an incredible opportunity to further develop my skills in AI and connect with industry innovators! #AI #BusinessFellowship #CareerGrowth",
+    date: '2025-03-04T20:54:00',
+    time: '20:54',
+    media: [
+      {
+        type: 'image',
+        url: '/lovable-uploads/a650b539-8e79-4cb6-aea7-167c91022fae.png',
+        alt: 'Perplexity Business Fellowship'
+      }
+    ],
+    likes: 0,
+    comments: 0,
+    shares: 0
+  },
+  {
     id: '0',
     content: "Optimized the mobile experience of this site. @Portfolio #AIDevelopment",
     date: '2025-03-03T22:36:00',
