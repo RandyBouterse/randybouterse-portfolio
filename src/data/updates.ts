@@ -25,7 +25,7 @@ export const updates: Update[] = [
     media: [
       {
         type: 'image',
-        url: '/lovable-uploads/a650b539-8e79-4cb6-aea7-167c91022fae.png',
+        url: 'https://i.ibb.co/6R6TtNgB/Perplexity-Business-Fellowship-Social-Asset.png',
         alt: 'Perplexity Business Fellowship'
       }
     ],
