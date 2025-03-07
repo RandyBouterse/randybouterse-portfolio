@@ -18,6 +18,22 @@ export interface Update {
 
 export const updates: Update[] = [
   {
+    id: '-2',
+    content: "I've been selected to join the AI Community Learning Program from Microsoft. I'll be learning, building and discussing new AI use cases with others.",
+    date: '2025-03-07T12:53:00',
+    time: '12:53',
+    media: [
+      {
+        type: 'image',
+        url: 'https://file.notion.so/f/f/32c233d6-1310-447b-b03a-efe5e67284b4/c2df7eee-3b6e-4add-9962-af887abd695d/Beta_Form-2.png?table=block&id=1ad20975-0929-8089-b550-fbc7dbf84387&spaceId=32c233d6-1310-447b-b03a-efe5e67284b4&expirationTimestamp=1741370400000&signature=t5QU76olMK7s_4hweDxI-oSF-rIurQmBt8UQdS7OkSk&downloadName=Beta+Form-2.png',
+        alt: 'Microsoft AI Community Learning Program'
+      }
+    ],
+    likes: 0,
+    comments: 0,
+    shares: 0
+  },
+  {
     id: '-1',
     content: "Great news! I've been selected for the Perplexity 2025 Business Fellowship program, an incredible opportunity to further develop my skills in AI and connect with industry innovators! #AI #BusinessFellowship #CareerGrowth",
     date: '2025-03-04T20:54:00',
