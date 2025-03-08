@@ -25,7 +25,7 @@ export const updates: Update[] = [
     media: [
       {
         type: 'image',
-        url: 'https://file.notion.so/f/f/32c233d6-1310-447b-b03a-efe5e67284b4/c2df7eee-3b6e-4add-9962-af887abd695d/Beta_Form-2.png?table=block&id=1ad20975-0929-8089-b550-fbc7dbf84387&spaceId=32c233d6-1310-447b-b03a-efe5e67284b4&expirationTimestamp=1741370400000&signature=t5QU76olMK7s_4hweDxI-oSF-rIurQmBt8UQdS7OkSk&downloadName=Beta+Form-2.png',
+        url: 'https://media.licdn.com/dms/image/v2/D4E22AQH0JtR-YiDvKw/feedshare-shrink_800/B4EZVxXcpHGYAk-/0/1741363727544?e=1744243200&v=beta&t=PXZITy5v5YXG4fDbQe5D3um2apX18yc0NeVJwYDTbEM',
         alt: 'Microsoft AI Community Learning Program'
       }
     ],
