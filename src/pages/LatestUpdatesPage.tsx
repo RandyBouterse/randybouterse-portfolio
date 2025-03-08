@@ -1,5 +1,4 @@
-
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { isSameDay, parseISO } from "date-fns";
 import { updates } from "@/data/updates";
 import UpdateCard from "@/components/UpdateCard";
@@ -8,15 +7,38 @@ import { ArrowUp, Circle, Sun, Moon, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { toast } from "@/components/ui/use-toast";
 
 const LatestUpdatesPage = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
+  const [localUpdates, setLocalUpdates] = useState(updates);
   const { theme, setTheme } = useTheme();
   const isMobile = useIsMobile();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const savedLikes = localStorage.getItem('updateLikes');
+    
+    if (savedLikes) {
+      try {
+        const parsedLikes = JSON.parse(savedLikes);
+        
+        const updatedUpdates = localUpdates.map(update => {
+          if (parsedLikes[update.id] !== undefined) {
+            return { ...update, likes: parsedLikes[update.id] };
+          }
+          return update;
+        });
+        
+        setLocalUpdates(updatedUpdates);
+      } catch (err) {
+        console.error('Error parsing saved likes:', err);
+      }
+    }
+  }, []);
+
   const filteredUpdates = useMemo(() => {
-    let filtered = [...updates]; // Create a copy to avoid mutations
+    let filtered = [...localUpdates]; 
     
     if (selectedDate) {
       filtered = filtered.filter(update => 
@@ -25,19 +47,39 @@ const LatestUpdatesPage = () => {
     }
     
     return filtered;
-  }, [selectedDate, updates]);
+  }, [selectedDate, localUpdates]);
 
   const handleSelectDate = (date: Date) => {
     setSelectedDate(date);
   };
 
   const handleLatestUpdate = () => {
-    if (updates.length > 0) {
-      const sortedDates = [...updates]
+    if (localUpdates.length > 0) {
+      const sortedDates = [...localUpdates]
         .map(update => new Date(update.date))
         .sort((a, b) => b.getTime() - a.getTime());
       
       setSelectedDate(sortedDates[0]);
+    }
+  };
+
+  const handleLikeUpdate = (id: string, likes: number) => {
+    setLocalUpdates(prev => 
+      prev.map(update => 
+        update.id === id ? { ...update, likes } : update
+      )
+    );
+    
+    const savedLikes = JSON.parse(localStorage.getItem('updateLikes') || '{}');
+    savedLikes[id] = likes;
+    localStorage.setItem('updateLikes', JSON.stringify(savedLikes));
+    
+    const likedUpdates = JSON.parse(localStorage.getItem('likedUpdates') || '{}');
+    if (likedUpdates[id]) {
+      toast({
+        description: "Thanks for liking this update!",
+        duration: 2000,
+      });
     }
   };
 
@@ -88,7 +130,6 @@ const LatestUpdatesPage = () => {
           )}
         </div>
         
-        {/* Mobile menu */}
         {isMobile && mobileMenuOpen && (
           <div className="absolute w-full bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 animate-fade-in">
             <div className="flex flex-col px-4 py-4 space-y-4">
@@ -109,7 +150,11 @@ const LatestUpdatesPage = () => {
             <div className={`${isMobile ? 'order-2' : 'md:col-span-2'} space-y-4`}>
               {filteredUpdates.length > 0 ? (
                 filteredUpdates.map(update => (
-                  <UpdateCard key={update.id} update={update} />
+                  <UpdateCard 
+                    key={update.id} 
+                    update={update} 
+                    onLikeUpdate={handleLikeUpdate}
+                  />
                 ))
               ) : (
                 <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm border border-gray-200 dark:border-gray-700 text-center">
@@ -144,7 +189,7 @@ const LatestUpdatesPage = () => {
                   </Button>
                 </div>
                 <UpdateDatePicker 
-                  updates={updates}
+                  updates={localUpdates}
                   onSelectDate={handleSelectDate}
                   selectedDate={selectedDate}
                 />

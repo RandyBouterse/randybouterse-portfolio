@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Heart, Calendar } from "lucide-react";
 import { Media, Update } from "@/data/updates";
 import MediaCarousel from "./MediaCarousel";
@@ -8,15 +8,29 @@ import { format } from "date-fns";
 
 interface UpdateCardProps {
   update: Update;
+  onLikeUpdate?: (id: string, likes: number) => void;
 }
 
-const UpdateCard = ({ update }: UpdateCardProps) => {
+const UpdateCard = ({ update, onLikeUpdate }: UpdateCardProps) => {
   const [mediaViewerOpen, setMediaViewerOpen] = useState(false);
   const [initialMediaIndex, setInitialMediaIndex] = useState(0);
-  const [liked, setLiked] = useState(false);
+  
+  // Check if this update was previously liked in localStorage
+  const [liked, setLiked] = useState(() => {
+    const likedUpdates = JSON.parse(localStorage.getItem('likedUpdates') || '{}');
+    return likedUpdates[update.id] || false;
+  });
+  
   const [likesCount, setLikesCount] = useState(update.likes || 0);
   
   const formattedDate = format(new Date(update.date), "MMM d, yyyy");
+
+  // Effect to save liked state to localStorage
+  useEffect(() => {
+    const likedUpdates = JSON.parse(localStorage.getItem('likedUpdates') || '{}');
+    likedUpdates[update.id] = liked;
+    localStorage.setItem('likedUpdates', JSON.stringify(likedUpdates));
+  }, [liked, update.id]);
 
   const handleMediaClick = (index: number) => {
     setInitialMediaIndex(index);
@@ -24,12 +38,14 @@ const UpdateCard = ({ update }: UpdateCardProps) => {
   };
 
   const handleLike = () => {
-    if (liked) {
-      setLikesCount(prev => prev - 1);
-    } else {
-      setLikesCount(prev => prev + 1);
-    }
+    const newLikesCount = liked ? likesCount - 1 : likesCount + 1;
+    setLikesCount(newLikesCount);
     setLiked(!liked);
+    
+    // Call the callback to update the parent component
+    if (onLikeUpdate) {
+      onLikeUpdate(update.id, newLikesCount);
+    }
   };
 
   // Function to format content with proper bullet points for the ProductCon update

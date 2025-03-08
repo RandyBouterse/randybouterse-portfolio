@@ -1,20 +1,45 @@
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { isSameDay, parseISO } from "date-fns";
 import { updates } from "@/data/updates";
 import UpdateCard from "./UpdateCard";
 import UpdateDatePicker from "./UpdateDatePicker";
 import { ArrowUp, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "@/components/ui/use-toast";
 
 const UPDATES_PER_PAGE = 3;
 
 const LatestUpdates = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
   const [currentPage, setCurrentPage] = useState(1);
+  const [localUpdates, setLocalUpdates] = useState(updates);
+
+  // Load saved likes from localStorage
+  useEffect(() => {
+    const savedLikes = localStorage.getItem('updateLikes');
+    
+    if (savedLikes) {
+      try {
+        const parsedLikes = JSON.parse(savedLikes);
+        
+        // Create a new array with updated like counts
+        const updatedUpdates = localUpdates.map(update => {
+          if (parsedLikes[update.id] !== undefined) {
+            return { ...update, likes: parsedLikes[update.id] };
+          }
+          return update;
+        });
+        
+        setLocalUpdates(updatedUpdates);
+      } catch (err) {
+        console.error('Error parsing saved likes:', err);
+      }
+    }
+  }, []);
 
   const filteredUpdates = useMemo(() => {
-    let filtered = [...updates]; // Create a copy to avoid mutations
+    let filtered = [...localUpdates]; 
     
     if (selectedDate) {
       filtered = filtered.filter(update => 
@@ -23,7 +48,7 @@ const LatestUpdates = () => {
     }
     
     return filtered;
-  }, [selectedDate, updates]);
+  }, [selectedDate, localUpdates]);
 
   // Calculate pagination values
   const totalPages = Math.ceil(filteredUpdates.length / UPDATES_PER_PAGE);
@@ -58,6 +83,30 @@ const LatestUpdates = () => {
     }
   };
 
+  // Handler to update likes
+  const handleLikeUpdate = (id: string, likes: number) => {
+    // Update in-memory state
+    setLocalUpdates(prev => 
+      prev.map(update => 
+        update.id === id ? { ...update, likes } : update
+      )
+    );
+    
+    // Save to localStorage
+    const savedLikes = JSON.parse(localStorage.getItem('updateLikes') || '{}');
+    savedLikes[id] = likes;
+    localStorage.setItem('updateLikes', JSON.stringify(savedLikes));
+    
+    // Show toast if they liked (not unliked)
+    const likedUpdates = JSON.parse(localStorage.getItem('likedUpdates') || '{}');
+    if (likedUpdates[id]) {
+      toast({
+        description: "Thanks for liking this update!",
+        duration: 2000,
+      });
+    }
+  };
+
   return (
     <section className="bg-gray-50 dark:bg-gray-900 py-32">
       <div className="container px-4 mx-auto">
@@ -68,7 +117,11 @@ const LatestUpdates = () => {
             {paginatedUpdates.length > 0 ? (
               <>
                 {paginatedUpdates.map(update => (
-                  <UpdateCard key={update.id} update={update} />
+                  <UpdateCard 
+                    key={update.id} 
+                    update={update} 
+                    onLikeUpdate={handleLikeUpdate}
+                  />
                 ))}
                 
                 {filteredUpdates.length > UPDATES_PER_PAGE && (
@@ -134,7 +187,7 @@ const LatestUpdates = () => {
                 </Button>
               </div>
               <UpdateDatePicker 
-                updates={updates}
+                updates={localUpdates}
                 onSelectDate={handleSelectDate}
                 selectedDate={selectedDate}
               />
