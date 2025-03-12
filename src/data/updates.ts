@@ -18,6 +18,22 @@ export interface Update {
 
 export const updates: Update[] = [
   {
+    id: '-3',
+    content: "Started sharing my thoughts and experiences on Medium. Go take a look at: https://medium.com/@randybouterse. Be sure to leave a comment, I'd like to get to know what you think!",
+    date: '2025-03-11T13:34:00',
+    time: '13:34',
+    media: [
+      {
+        type: 'image',
+        url: '/lovable-uploads/256de43b-eb0b-4792-8043-7482102ede52.png',
+        alt: 'The Rise of AI Product Tools Medium Article'
+      }
+    ],
+    likes: 0,
+    comments: 0,
+    shares: 0
+  },
+  {
     id: '-2',
     content: "I've been selected to join the AI Community Learning Program from Microsoft. I'll be learning, building and discussing new AI use cases with others.",
     date: '2025-03-07T12:53:00',

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { MessageSquare, Sun, Moon, FileDown, Mail, Linkedin, MapPin, Circle, Link, Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -15,6 +14,19 @@ import {
 } from "@/components/ui/tooltip";
 import { Card, CardContent } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
+
+const MediumIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1043.63 592.71"
+    width="24"
+    height="24"
+    fill="currentColor"
+    {...props}
+  >
+    <path d="M588.67 296.36c0 163.67-131.78 296.35-294.33 296.35S0 460.03 0 296.36 131.78 0 294.34 0s294.33 132.69 294.33 296.36M911.56 296.36c0 154.06-65.89 279-147.17 279s-147.17-124.94-147.17-279 65.88-279 147.16-279 147.17 124.9 147.17 279M1043.63 296.36c0 138-23.17 249.94-51.76 249.94s-51.75-111.91-51.75-249.94 23.17-249.94 51.75-249.94 51.76 111.9 51.76 249.94"></path>
+  </svg>
+);
 
 const Index = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -109,7 +121,6 @@ const Index = () => {
           )}
         </div>
         
-        {/* Mobile menu */}
         {isMobile && mobileMenuOpen && (
           <div className="absolute w-full bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 animate-fade-in">
             <div className="flex flex-col px-4 py-4 space-y-4">
@@ -200,6 +211,22 @@ const Index = () => {
                     <p>Let's connect!</p>
                   </TooltipContent>
                 </Tooltip>
+                
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a 
+                      href="https://medium.com/@randybouterse" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-foreground hover:text-gray-600 transition-colors"
+                    >
+                      <MediumIcon className="w-6 h-6" />
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Read my articles on Medium</p>
+                  </TooltipContent>
+                </Tooltip>
               </div>
             </TooltipProvider>
           </div>
@@ -244,10 +271,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Modified Experience Section (will be handled by the updated component) */}
       <ExperienceSection />
 
-      {/* Modified Skills Section (will be handled by the updated component) */}
       <SkillsSection />
 
       <section className="py-16 md:py-24 bg-white dark:bg-black">
@@ -335,7 +360,6 @@ const Index = () => {
   );
 };
 
-// New collapsible card component for "A bit of awesomeness" section
 const AwesomenessCard = ({ title, subtitle, content }: { title: string; subtitle: string; content: string }) => {
   const [isOpen, setIsOpen] = useState(false);
   
