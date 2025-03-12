@@ -25,7 +25,7 @@ export const updates: Update[] = [
     media: [
       {
         type: 'image',
-        url: '/lovable-uploads/256de43b-eb0b-4792-8043-7482102ede52.png',
+        url: 'https://i.ibb.co/N2RCNdY/medium-post-preview.jpg',
         alt: 'The Rise of AI Product Tools Medium Article'
       }
     ],
