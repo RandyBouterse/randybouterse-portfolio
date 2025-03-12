@@ -19,13 +19,13 @@ export interface Update {
 export const updates: Update[] = [
   {
     id: '-3',
-    content: "Started sharing my thoughts and experiences on Medium. Go take a look at: https://medium.com/@randybouterse. Be sure to leave a comment, I'd like to get to know what you think!",
+    content: "Started sharing my thoughts and experiences on Medium. Go take a look at: https://medium.com/@randybouterse Be sure to leave a comment, I'd like to get to know what you think!",
     date: '2025-03-11T13:34:00',
     time: '13:34',
     media: [
       {
         type: 'image',
-        url: 'https://i.ibb.co/N2RCNdY/medium-post-preview.jpg',
+        url: 'https://i.ibb.co/PvMpG96y/image.png',
         alt: 'The Rise of AI Product Tools Medium Article'
       }
     ],
