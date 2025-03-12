@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Heart, Calendar } from "lucide-react";
 import { Media, Update } from "@/data/updates";
@@ -85,7 +84,24 @@ const UpdateCard = ({ update, onLikeUpdate }: UpdateCardProps) => {
       }
     }
     
-    // For all other updates, return the content as is
+    // For all other updates, parse URLs in content and make them clickable
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    if (content.match(urlRegex)) {
+      const parts = content.split(urlRegex);
+      const elements = parts.map((part, index) => {
+        if (part.match(urlRegex)) {
+          return (
+            <a key={index} href={part} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+              {part}
+            </a>
+          );
+        }
+        return part;
+      });
+      return <p className="text-gray-800 dark:text-gray-200">{elements}</p>;
+    }
+    
+    // Default return if no URLs found
     return <p className="text-gray-800 dark:text-gray-200">{content}</p>;
   };
 
