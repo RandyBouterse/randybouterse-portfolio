@@ -127,10 +127,10 @@ const About = () => {
                   To me, product management is all about problem-solving and collaboration, and I love working with passionate people to build something amazing. Think of me as "The Composer.". I may not be a pro at playing any single instrument (design, engineering, or marketing), but I know how to bring them all together in perfect harmony. 🎼✨
                 </p>
                 <p>
-                  My colleagues call me "Mr. Never Fazed" because I stay calm, cool, and collected under pressure. But don't get me wrong—I care deeply. I just believe that keeping a level head is the best way to find solutions and get things done. 🔥🧩
+                  My colleagues call me "Mr. Never Fazed" because I stay cool, calm and collected under pressure. But don't get me wrong—I care deeply. I believe that keeping a level head is the best way to find solutions and get things done. 🔥🧩
                 </p>
                 <p>
-                  What sets me apart? I build real connections. Whether it's stakeholders, engineers, or users, I adapt, communicate, and find common ground to create better collaboration—and better products.
+                  What sets me apart? I build real connections. Whether it's stakeholders, engineers, or users, I adapt, communicate, and find common ground to create better collaboration and better products.
                 </p>
                 <p>
                   Let's connect and make something great together! 🚀🎯
