@@ -32,7 +32,6 @@ const ProjectDetails = () => {
         
         "Key Results & Impact:",
         "The AI-assisted development process reduced development time by approximately 80%, allowing me to focus on refining the user experience and content. This is all because my experience in development is just good enough to discuss certain elements and bugs, but I'd need to invest a lot of time into learning.",
-        
         "The new portfolio effectively showcases my experience with AI products.",
         
         "Lessons Learned:",
@@ -46,14 +45,26 @@ const ProjectDetails = () => {
       ]
     },
     "aime-bot": {
-      title: "AIR - AI Randy - Virtual Portfolio Bot",
-      description: "An AI-powered chatbot that helps users explore my portfolio and experience",
+      title: "Building AIR (AI Randy): An interactive agent for professional portfolio engagement",
+      description: "I developed AIR, an AI-powered agent that simulates conversations with hiring managers, enabling dynamic exploration of my career journey. By leveraging ChatGPT, Claude, and Gemini's unique capabilities, I created an interactive experience that answers technical questions about projects while demonstrating my expertise in AI product creation and integration.",
       tech: ["OpenAI", "React", "Node.js", "TypeScript"],
       details: [
-        "To further showcase my professional expertise, I created AIR (AI Randy), an AI-powered chatbot that helps visitors explore my portfolio. The chatbot answers questions about my career, skills, and projects, simulating a conversation with a hiring manager.",
-        "Objectives: Develop an interactive chatbot for portfolio exploration. Automate answers to common career-related questions. Simulate professional interactions for a dynamic user experience.",
-        "Approach: Prompted ChatGPT to simulate a hiring manager's interview, gathering responses to common questions. Created a detailed chatbot prompt defining its role, scope, and limitations. Iteratively tested and refined the chatbot based on feedback and accuracy.",
-        "Key Results: Launched a functional AI chatbot to enhance user interaction with my portfolio. Gathered valuable feedback for continuous improvements.",
+        "Problem Statement: ",
+        "My static portfolio lacked engagement metrics and couldn't demonstrate my AI implementation skills in real-time. I needed a solution that would: Showcase my AI integration capabilities, provide 24/7 interactive career Q&A, collect actionable user interaction data",
+      
+        "Approach & Solution: ",
+        "Developed an interactive agent for portfolio exploration. Automated answers to common career-related questions to simulate professional interactions for a dynamic user experience.",
+        "I have used Voiceflow for an easy setup and implementation and added some of my documents (made sure to delete unnecessary PII) for setting up a RAG chatbot.",
+        
+        "Testing & Refinement: ",
+        "Tested the agent by asking career related questions, personal questions, unrelated questions and various other questions. I refined the prompt and made a few iterations before the results were satisfactory.",
+
+        "Key Results: ",
+        "Launched a functional AI agent to enhance user interaction on my portfolio site. Gathered valuable feedback for continuous improvements.",
+        "There aren't a lot of measurable results yet. The agent does get a lot of questions from users.",
+        "I also get a lot of questions by others to help them build their agent and it came up in conversations as something people saw as very interesting.",
+
+        "Insights: It was a fun experience playing with this technology to build something for myself. It helped me understand which levers to adjust to get to the results I wanted. For a next iteration, I will build an agent either from scratch or with a less 'no-code' approach",
         "Technologies Used: OpenAI (ChatGPT), Anthropic (Claude), Google (Gemini), Lovable.dev (Portfolio website), analytics for tracking user interactions."
       ],
       images: [
