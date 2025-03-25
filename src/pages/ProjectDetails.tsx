@@ -41,7 +41,7 @@ const ProjectDetails = () => {
       ],
       images: [
         "https://i.postimg.cc/d050bmpt/undraw-trendy-interface-bm65.png",
-        "https://i.postimg.cc/65Rm5Cn9/image.png"
+        "https://i.ibb.co/ymKRy9R4/chrome-capture-2025-3-25.gif"
       ]
     },
     "aime-bot": {
@@ -69,7 +69,7 @@ const ProjectDetails = () => {
       ],
       images: [
         "https://i.postimg.cc/cCn48qHr/undraw-visionary-technology-6ouq.png",
-        "https://i.postimg.cc/rFD7RC5s/A7-B6617-E-93-E0-46-E5-BDBD-19-DE5-B03-B9-E4.png"
+        "https://i.ibb.co/bgZWd5z5/chrome-capture-2025-3-25-1.gif"
       ]
     },
     "customer-service-platform": {
