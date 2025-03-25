@@ -23,19 +23,19 @@ const ProjectDetails = () => {
         "My previous online presence lacked a modern design and a clear focus on my experience with AI-driven products. I needed a portfolio that could dynamically showcase my skills, projects, and career trajectory in a compelling and easily navigable format.",
 
         "Approach & Solution:",
-        "Research & Planning: ""I began by researching portfolio best practices, analyzing successful examples in the tech industry, and identifying the key information to include (project details, skills, experience). This research informed the detailed outline I created to guide the AI development agent."
+        "Research & Planning:""I began by researching portfolio best practices, analyzing successful examples in the tech industry, and identifying the key information to include (project details, skills, experience). This research informed the detailed outline I created to guide the AI development agent."
 
-"AI-Driven Development with Lovable: ""I utilized Lovable, an AI-powered development tool, to generate the website's initial structure and components based on my outline. This involved iterative prompt engineering, carefully testing each feature and button for functionality and responsiveness."
+"AI-Driven Development with Lovable:""I utilized Lovable, an AI-powered development tool, to generate the website's initial structure and components based on my outline. This involved iterative prompt engineering, carefully testing each feature and button for functionality and responsiveness."
 
-"Code Refinement & Customization: ""While Lovable handled much of the initial development, I leveraged my TypeScript, React, and Tailwind CSS skills to fine-tune the code, customize the design, and ensure optimal performance. This included [mention specific examples, e.g., optimizing image loading, improving mobile responsiveness on specific devices, implementing a custom animation]."
+"Code Refinement & Customization:""While Lovable handled much of the initial development, I leveraged my TypeScript, React, and Tailwind CSS skills to fine-tune the code, customize the design, and ensure optimal performance. This included [mention specific examples, e.g., optimizing image loading, improving mobile responsiveness on specific devices, implementing a custom animation]."
 
-"Version Control & Deployment: ""I used GitHub for version control throughout the project, ensuring a safe and collaborative development environment. The final website was deployed to [Hosting provider], making it publicly accessible.""
+"Version Control & Deployment:""I used GitHub for version control throughout the project, ensuring a safe and collaborative development environment. The final website was deployed to [Hosting provider], making it publicly accessible.""
 
-        "Key Results & Impact: "
+        "Key Results & Impact:"
         "The AI-assisted development process reduced development time by approximately 80%, allowing me to focus on refining the user experience and content. This is all because my experience in development is just good enough to discuss certain elements and bugs, but I'd need to invest a lot of time into learning."
         "The new portfolio effectively showcases my experience with AI products."
         
-        "Lessons Learned: "
+        "Lessons Learned:"
         "This project provided valuable insights into the capabilities and limitations of AI-powered development tools. While AI significantly accelerated the initial development process, human expertise remained crucial for refining the code, ensuring design consistency, and optimizing the user experience. In future AI-assisted projects, I would focus on a better initial prompt to start with, being more descriptive in the prompt and be clear about what elements can be left out."
 
         "Technologies Used: React, TypeScript, Tailwind CSS, Shadcn UI, Lovable (AI-powered development tool), GitHub"
